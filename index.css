@@ -1,0 +1,42 @@
+body {
+	background-color: dimgray;
+	font-family: Verdana, Geneva, sans-serif;
+	color: aliceblue;
+	border-color: black;
+}
+
+#header {
+	background-color: gray;
+	border-style: solid;
+	border-radius: 5px 20px 20px 20px;
+	border-color: maroon;
+	padding: 10px;
+	margin-bottom: 60px;
+}
+
+#header h1 {
+	margin: 10px 0px 0px 5px;
+}
+
+#header p {
+	margin-left: 20px;
+}
+
+table {
+	border-collapse: collapse;
+	
+}
+
+thead {
+	background-color: #444444;
+}
+
+table, th, td {
+	border-style: solid;
+	border-color: maroon;
+	padding: 5px;
+}
+
+tr:nth-child(even) {
+	background-color: gray;
+}

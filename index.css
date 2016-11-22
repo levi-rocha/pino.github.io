@@ -3,16 +3,34 @@ body {
 	font-family: Verdana, Geneva, sans-serif;
 	color: aliceblue;
 	border-color: black;
+	text-align: center;
 }
 
 #header {
-	background-color: #dddddd;
+	background-color: #eeeeee;
 	border-style: solid;
 	border-radius: 5px 20px 20px 20px;
 	border-color: #333366;
 	padding: 5px;
-	margin-bottom: 40px;
 	color: #333366;
+	width: 40%;
+	margin: auto;
+	margin-bottom: 40px;
+	min-width: 420px;
+}
+
+#author {
+	display: block;
+	width: 100%;
+}
+
+#links {
+	display: block;
+	margin: 10px;
+}
+
+#links a {
+	font-size: 20px;
 }
 
 #header h2 {
@@ -23,8 +41,15 @@ body {
 	margin: 10px 5px 10px 20px;
 }
 
+#header div {
+	display: inline-block;
+}
+
 table {
-	border-collapse: collapse;	
+	border-collapse: collapse;
+	margin: auto;
+    width: 40%;
+    min-width: 420px;
 }
 
 tr:nth-child(odd) {
@@ -33,7 +58,7 @@ tr:nth-child(odd) {
 }
 
 tr:nth-child(even) {
-	background-color: #dddddd;
+	background-color: #eeeeee;
 	color: #333366;
 }
 
@@ -45,5 +70,5 @@ thead td {
 table, th, td {
 	border-style: solid;
 	border-color: #003366;
-	padding: 5px;
+	padding: 8px 10px 8px 10px;
 }

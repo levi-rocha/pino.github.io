@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Voice Command Chess Board - Integrated</title>
+<link rel="stylesheet" href="css/chessboard-0.3.0.css" />
+</head>
+<body>
+
+	<div id="chessboard"></div>
+
+	<div id="board" style="width: 400px"></div>
+
+	<p id="status-wrapper">
+		Status: <span id="status"></span>
+	</p>
+	<p id="pgn-wrapper">
+		PGN: <span id="pgn"></span>
+	</p>
+	<div class="btn-wrapper">
+		<input class="game-button" type="button" id="startBtn" value="Start" />
+		<input class="game-button" type="button" id="clearBtn" value="Clear" />
+		<input class="game-button" type="button" id="colorBtn" value="Flip" />
+		<input class="game-button" type="button" id="backBtn" value="Back" />
+	</div>
+
+	<script src="js/chessboard-0.3.0.js"></script>
+	<script src="jquery.min.js"></script>
+	<script src="js/chess.js"></script>
+	<script src="js/integratedchess.js"></script>
+
+</body>
+</html>

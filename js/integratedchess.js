@@ -93,7 +93,7 @@ if (!('webkitSpeechRecognition' in window)) {
 	recognition.onerror = function(event) {};
 	recognition.onend = function() {};
 	recognition.onresult = function(event) {
-		for (var i = event.resultIndex; i < event.results.length; i++) {
+		for (var i = event.resultIndex; i < event.results.length; ++i) {
 			if (event.results[i].isFinal) {
 				var result = event.results[i][0].transcript;
 				alert(result);

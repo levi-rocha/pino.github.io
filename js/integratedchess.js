@@ -89,29 +89,9 @@ if (!('webkitSpeechRecognition' in window)) {
 	var recognition = new webkitSpeechRecognition();
 	recognition.continuous = false;
 	recognition.interimResults = true;
-	recognition.onstart = function() {
-		// recognizing = true;
-	};
-	recognition.onerror = function(event) {
-		if (event.error == 'no-speech') {
-			ignore_onend = true;
-		}
-		if (event.error == 'audio-capture') {
-			ignore_onend = true;
-		}
-		if (event.error == 'not-allowed') {
-			ignore_onend = true;
-		}
-	};
-	recognition.onend = function() {
-		// recognizing = false;
-		if (ignore_onend) {
-			return;
-		}
-		if (!final_transcript) {
-			return;
-		}
-	};
+	recognition.onstart = function() {};
+	recognition.onerror = function(event) {};
+	recognition.onend = function() {};
 	recognition.onresult = function(event) {
 		alert("on result");
 		var interim_transcript = '';

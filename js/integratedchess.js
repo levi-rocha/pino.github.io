@@ -88,19 +88,28 @@ if (!('webkitSpeechRecognition' in window)) {
 } else {
 	var recognition = new webkitSpeechRecognition();
 	recognition.continuous = false;
-	recognition.interimResults = true;
+	recognition.interimResults = false;
 	recognition.onstart = function() {};
 	recognition.onerror = function(event) {};
 	recognition.onend = function() {};
 	recognition.onresult = function(event) {
-		alert("on result");
+		for (var i = event.resultIndex; i < event.results.length; i++) {
+			if (event.results[i].isFinal) {
+				var result = event.results[i][0].transcript;
+				alert(result);
+			}
+		}
+			/*
 		var interim_transcript = '';
 		for (var i = event.resultIndex; i < event.results.length; ++i) {
 			interim_transcript += event.results[i][0].transcript;
 		}
 		alert(interim_transcript);
+		*/
 	};
 }
+
+var parseTranscript = function(transcript) {};
 
 board = new ChessBoard('board', cfg);
 $(window).resize(board.resize);

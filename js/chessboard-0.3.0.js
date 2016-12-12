@@ -245,6 +245,7 @@ var ANIMATION_HAPPENING = false,
   DRAGGED_PIECE,
   DRAGGED_PIECE_LOCATION,
   DRAGGED_PIECE_SOURCE,
+  CLICK_MOVE = false,
   DRAGGING_A_PIECE = false,
   SPARE_PIECE_ELS_IDS = {},
   SQUARE_ELS_IDS = {},
@@ -1115,6 +1116,17 @@ function trashDraggedPiece() {
 }
 
 function dropDraggedPieceOnSquare(square) {
+	
+	// if destination is same as source, piece stays picked up and is dropped at the next clicked square.
+	if (CLICK_MOVE == false) {
+		if (square === DRAGGED_PIECE_SOURCE) {
+			CLICK_MOVE = true;
+			return;
+		}
+	}
+	
+	CLICK_MOVE = false;
+
   removeSquareHighlights();
 
   // update position
@@ -1271,6 +1283,17 @@ function stopDraggedPiece(location) {
     if (result === 'snapback' || result === 'trash') {
       action = result;
     }
+  } else {
+	  // source piece is a spare piece and position is off the board
+	  if (DRAGGED_PIECE_SOURCE === 'spare' && location === 'offboard') {
+		  if (CLICK_MOVE == false) {
+			  // pick up spare piece and put it down on next clicked square
+			  CLICK_MOVE = true;
+			  return;
+		  } else {
+			  CLICK_MOVE = false;
+		  }
+	  }
   }
 
   // do it!

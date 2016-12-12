@@ -83,6 +83,49 @@ var back = function() {
 	board.position(game.fen());
 };
 
+if (!('webkitSpeechRecognition' in window)) {
+	alert("no speech rec");
+} else {
+	var recognition = new webkitSpeechRecognition();
+	recognition.continuous = false;
+	recognition.interimResults = true;
+	recognition.onstart = function() {
+		//recognizing = true;
+	};
+	recognition.onerror = function(event) {
+		if (event.error == 'no-speech') {
+			ignore_onend = true;
+		}
+		if (event.error == 'audio-capture') {
+			ignore_onend = true;
+		}
+		if (event.error == 'not-allowed') {
+			ignore_onend = true;
+		}
+	};
+	recognition.onend = function() {
+		//recognizing = false;
+		if (ignore_onend) {
+			return;
+		}
+		if (!final_transcript) {
+			return;
+		}
+	};
+	recognition.onresult = function(event) {
+		var interim_transcript = '';
+		for (var i = event.resultIndex; i < event.results.length; ++i) {
+			if (event.results[i].isFinal) {
+				final_transcript += event.results[i][0].transcript;
+			} else {
+				interim_transcript += event.results[i][0].transcript;
+			}
+		}
+		alert(final_transcript);
+		alert(interim_transcript);
+	};
+}
+
 board = new ChessBoard('board', cfg);
 $(window).resize(board.resize);
 
@@ -92,3 +135,7 @@ $('#startBtn').on('click', board.start);
 $('#clearBtn').on('click', board.clear);
 $('#colorBtn').on('click', board.flip);
 $('#backBtn').on('click', back);
+
+$(document).ready(function() {
+	recognition.start();
+});

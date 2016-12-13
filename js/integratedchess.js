@@ -152,7 +152,6 @@ var parseTranscript = function(transcript) {
 };
 
 var displayInput = function(input) {
-	alert("display input");
 	$("#inputDisplay").append(input);
 	$("#inputDisplay").append(" ; ");
 }

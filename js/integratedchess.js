@@ -94,6 +94,7 @@ if (!('webkitSpeechRecognition' in window)) {
 	recognition.onerror = function(event) {
 	};
 	recognition.onend = function() {
+		this.start();
 	};
 	recognition.onresult = function(event) {
 		for (var i = event.resultIndex; i < event.results.length; ++i) {
@@ -148,10 +149,10 @@ var parseTranscript = function(transcript) {
 		}
 		*/
 	}
-	recognition.start();
 };
 
 var displayInput = function(input) {
+	alert("display input");
 	$("#inputDisplay").append(input);
 	$("#inputDisplay").append(" ; ");
 }

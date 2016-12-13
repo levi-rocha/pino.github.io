@@ -89,27 +89,77 @@ if (!('webkitSpeechRecognition' in window)) {
 	var recognition = new webkitSpeechRecognition();
 	recognition.continuous = false;
 	recognition.interimResults = false;
-	recognition.onstart = function() {};
-	recognition.onerror = function(event) {};
-	recognition.onend = function() {};
+	recognition.onstart = function() {
+	};
+	recognition.onerror = function(event) {
+	};
+	recognition.onend = function() {
+	};
 	recognition.onresult = function(event) {
 		for (var i = event.resultIndex; i < event.results.length; ++i) {
 			if (event.results[i].isFinal) {
 				var result = event.results[i][0].transcript;
-				alert(result);
+				parseTranscript(result);
 			}
 		}
-			/*
-		var interim_transcript = '';
-		for (var i = event.resultIndex; i < event.results.length; ++i) {
-			interim_transcript += event.results[i][0].transcript;
-		}
-		alert(interim_transcript);
-		*/
 	};
 }
 
-var parseTranscript = function(transcript) {};
+var squareRegex = /[a-h][1-8]$/i;
+var algebraicRegex = /[pnbrqk][a-h][1-8]$/i;
+
+// TODO: check check, checkmate, castle
+
+var parseTranscript = function(transcript) {
+	var input = transcript.toLowerCase();
+	displayInput(input);
+	if (squareRegex.test(input)) {
+		// contains square at the end
+		var move = '';
+		var length = input.length;
+		if (length == 2) {
+			// pawn move
+			move += input;
+			displayMove(move);
+		} else if (length == 3) {
+			if (algebraicRegex.test(input)) {
+				// algebraic piece move
+				move += input;
+				displayMove(move);
+			} else {
+				// invalid
+			}
+		} /*
+		else if (length > 3) {
+			var inputWords = input.split(" ");
+			var takes = false;
+			for (var i = inputWords.length - 2; i >= 0; i--) {
+				// checks words backwards, starting from last word before the
+				// square
+				switch (inputWords[i]) {
+				case "take":
+				case "takes":
+				case "capture":
+				case "captures":
+					takes = true;
+					
+				}
+			}
+		}
+		*/
+	}
+	recognition.start();
+};
+
+var displayInput = function(input) {
+	$("#inputDisplay").append(input);
+	$("#inputDisplay").append(" ; ");
+}
+
+var displayMove = function(input) {
+	$("#moveDisplay").append(input);
+	$("#moveDisplay").append(" ; ");
+}
 
 board = new ChessBoard('board', cfg);
 $(window).resize(board.resize);

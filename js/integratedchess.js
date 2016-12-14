@@ -109,11 +109,14 @@ if (!('webkitSpeechRecognition' in window)) {
 var squareRegex = /[a-h][1-8]$/i;
 var algebraicRegex = /[pnbrqk][a-h][1-8]$/i;
 
-// TODO: check check, checkmate, castle
-
 var parseTranscript = function(transcript) {
 	var input = transcript.toLowerCase();
 	displayInput(input);
+	var inputWords = input.split(" ");
+	if (inputWords[inputWords.length-1] == "check" || inputWords[inputWords.length-1] == "checkmate") {
+		inputWords.splice(inputWords.length-1, 1);
+		input = inputWords.join(" ");
+	}
 	if (squareRegex.test(input)) {
 		// contains square at the end
 		var move = '';
@@ -121,39 +124,130 @@ var parseTranscript = function(transcript) {
 		if (length == 2) {
 			// pawn move
 			move += input;
-			displayMove(move);
+			makeMove(move);
 		} else if (length == 3) {
 			if (algebraicRegex.test(input)) {
 				// algebraic piece move
 				move += input;
-				displayMove(move);
+				move = move.charAt(0).toUpperCase() + move.slice(1);
+				makeMove(move);
 			} else {
 				// invalid
 			}
-		} /*
-		else if (length > 3) {
-			var inputWords = input.split(" ");
-			var takes = false;
+		} else if (length > 3) {
+			var piece = '';
+			var which = '';
+			var end = false;
 			for (var i = inputWords.length - 2; i >= 0; i--) {
 				// checks words backwards, starting from last word before the
 				// square
 				switch (inputWords[i]) {
-				case "take":
-				case "takes":
-				case "capture":
-				case "captures":
-					takes = true;
-					
+				case "a":
+					which = "a";
+					break;
+				case "b":	
+					which = "b";
+					break;
+				case "c":
+					which = "c";
+					break;
+				case "d":
+					which = "d";
+					break;
+				case "e":
+					which = "e";
+					break;
+				case "f":
+					which = "f";
+					break;
+				case "g":
+					which = "g";
+					break;
+				case "h":
+					which = "h";
+					break;
+				case "1":
+					which = "1";
+					break;
+				case "2":
+					which = "2";
+					break;
+				case "3":
+					which = "3";
+					break;
+				case "4":
+					which = "4";
+					break;
+				case "5":
+					which = "5";
+					break;
+				case "6":
+					which = "6";
+					break;
+				case "7":
+					which = "7";
+					break;
+				case "8":
+					which = "8";
+					break;
+				case "knight":
+				case "night":
+				case "horse":
+					piece = "N";
+					end = true;
+					break;
+				case "pawn":
+					end = true;
+					break;
+				case "bishop":
+					piece = "B";
+					end = true;
+					break;
+				case "rook":
+					piece = "R";
+					end = true;
+					break;
+				case "queen":
+					piece = "Q";
+					end = true;
+					break;
+				case "king":
+					piece = "K";
+					end = true;
+					break;
+				default:
+					// skip word
 				}
+				if (end)
+					break;
 			}
+			move = piece + which + inputWords[inputWords.length-1];
+			makeMove(move);
 		}
-		*/
+
+	}
+	//no square in input. check other possibilities
+	var inputWords = input.split(" ");
+	for (var i = 0; i < inputWords.length; i++) {
+		switch(inputWords[i]) {
+		case "castle":
+			break;
+		default:
+			// skip word
+		}
 	}
 };
 
 var displayInput = function(input) {
 	$("#inputDisplay").append(input);
 	$("#inputDisplay").append(" ; ");
+}
+
+var makeMove = function(input) {
+	game.move(input);
+	updateStatus();
+	board.position(game.fen());
+	displayMove(input);
 }
 
 var displayMove = function(input) {
@@ -170,6 +264,8 @@ $('#startBtn').on('click', board.start);
 $('#clearBtn').on('click', board.clear);
 $('#colorBtn').on('click', board.flip);
 $('#backBtn').on('click', back);
+
+//TODO: takes, which piece, castle...
 
 $(document).ready(function() {
 	recognition.start();

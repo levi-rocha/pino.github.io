@@ -1060,7 +1060,18 @@ function removeSquareHighlights() {
     .removeClass(CSS.highlight1 + ' ' + CSS.highlight2);
 }
 
-function snapbackDraggedPiece() {
+function snapbackDraggedPiece(square) {
+	
+	// if destination is same as source, piece stays picked up and is dropped at the next clicked square.
+	if (CLICK_MOVE == false) {
+		if (square === DRAGGED_PIECE_SOURCE) {
+			CLICK_MOVE = true;
+			return;
+		}
+	}
+	
+	CLICK_MOVE = false;
+	
   // there is no "snapback" for spare pieces
   if (DRAGGED_PIECE_SOURCE === 'spare') {
     trashDraggedPiece();
@@ -1298,7 +1309,7 @@ function stopDraggedPiece(location) {
 
   // do it!
   if (action === 'snapback') {
-    snapbackDraggedPiece();
+    snapbackDraggedPiece(location);
   }
   else if (action === 'trash') {
     trashDraggedPiece();

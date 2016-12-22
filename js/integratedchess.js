@@ -121,33 +121,6 @@ var voiceToggle = function() {
 	}
 }
 
-if (!('webkitSpeechRecognition' in window)) {
-	alert("no speech rec");
-} else {
-	var recognition = new webkitSpeechRecognition();
-	recognition.continuous = false;
-	recognition.interimResults = true;
-	recognition.onstart = function() {
-	};
-	recognition.onerror = function(event) {
-	};
-	recognition.onend = function() {
-		this.start();
-	};
-	recognition.onresult = function(event) {
-		var interim = "";
-		for (var i = event.resultIndex; i < event.results.length; ++i) {
-			if (event.results[i].isFinal) {
-				var result = event.results[i][0].transcript;
-				parseTranscript(result);
-				displayInput(interim + "[" + result + "]");
-			} else {
-				interim += "(" + event.results[i][0].transcript + ")";
-			}
-		}
-	};
-}
-
 var squareRegex = /[a-h][1-8]$/i;
 var algebraicRegex = /[pnbrqk][a-h][1-8]$/i;
 

@@ -88,7 +88,7 @@ if (!('webkitSpeechRecognition' in window)) {
 } else {
 	var recognition = new webkitSpeechRecognition();
 	recognition.continuous = false;
-	recognition.interimResults = false;
+	recognition.interimResults = true;
 	recognition.onstart = function() {
 	};
 	recognition.onerror = function(event) {
@@ -97,10 +97,14 @@ if (!('webkitSpeechRecognition' in window)) {
 		this.start();
 	};
 	recognition.onresult = function(event) {
+		var interim = "";
 		for (var i = event.resultIndex; i < event.results.length; ++i) {
 			if (event.results[i].isFinal) {
 				var result = event.results[i][0].transcript;
 				parseTranscript(result);
+				displayInput(interim + "[[" + result + "]]");
+			} else {
+				interim += "(" + event.results[i][0].transcript + ")";
 			}
 		}
 	};
@@ -111,7 +115,6 @@ var algebraicRegex = /[pnbrqk][a-h][1-8]$/i;
 
 var parseTranscript = function(transcript) {
 	var input = transcript.toLowerCase();
-	displayInput(input);
 	var inputWords = input.split(" ");
 	if (inputWords[inputWords.length-1] == "check" || inputWords[inputWords.length-1] == "checkmate") {
 		inputWords.splice(inputWords.length-1, 1);
@@ -137,6 +140,7 @@ var parseTranscript = function(transcript) {
 		} else if (length > 3) {
 			var piece = '';
 			var which = '';
+			var capture = '';
 			var end = false;
 			for (var i = inputWords.length - 2; i >= 0; i--) {
 				// checks words backwards, starting from last word before the
@@ -215,13 +219,19 @@ var parseTranscript = function(transcript) {
 					piece = "K";
 					end = true;
 					break;
+				case "takes":
+				case "take":
+				case "captures":
+				case "capture":
+					capture = "x";
+					break;
 				default:
 					// skip word
 				}
 				if (end)
 					break;
 			}
-			move = piece + which + inputWords[inputWords.length-1];
+			move = piece + which + capture + inputWords[inputWords.length-1];
 			makeMove(move);
 		}
 
@@ -265,7 +275,7 @@ $('#clearBtn').on('click', board.clear);
 $('#colorBtn').on('click', board.flip);
 $('#backBtn').on('click', back);
 
-//TODO: takes, which piece, castle...
+//TODO: takes, which piece, castle, voice rec predictable mistakes...
 
 $(document).ready(function() {
 	recognition.start();

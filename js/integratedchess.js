@@ -83,6 +83,44 @@ var back = function() {
 	board.position(game.fen());
 };
 
+var voiceOn = false;
+
+var voiceToggle = function() {
+	if (voiceOn) {
+		voiceOn = false;
+		$('#voiceBtn').prop('value', 'Start voice recognition');
+	} else {
+		if (!('webkitSpeechRecognition' in window)) {
+			alert("No speech recognition available on this browser. Please try using Chrome.");
+		} else {
+			var recognition = new webkitSpeechRecognition();
+			recognition.continuous = false;
+			recognition.interimResults = true;
+			recognition.onstart = function() {
+			};
+			recognition.onerror = function(event) {
+			};
+			recognition.onend = function() {
+				this.start();
+			};
+			recognition.onresult = function(event) {
+				var interim = "";
+				for (var i = event.resultIndex; i < event.results.length; ++i) {
+					if (event.results[i].isFinal) {
+						var result = event.results[i][0].transcript;
+						parseTranscript(result);
+						displayInput(interim + "[" + result + "]");
+					} else {
+						interim += "(" + event.results[i][0].transcript + ")";
+					}
+				}
+			};
+			$('#voiceBtn').prop('value', 'Stop voice recognition');
+			voiceOn = true;
+		}
+	}
+}
+
 if (!('webkitSpeechRecognition' in window)) {
 	alert("no speech rec");
 } else {
@@ -102,7 +140,7 @@ if (!('webkitSpeechRecognition' in window)) {
 			if (event.results[i].isFinal) {
 				var result = event.results[i][0].transcript;
 				parseTranscript(result);
-				displayInput(interim + "[[" + result + "]]");
+				displayInput(interim + "[" + result + "]");
 			} else {
 				interim += "(" + event.results[i][0].transcript + ")";
 			}
@@ -242,6 +280,12 @@ var parseTranscript = function(transcript) {
 		switch(inputWords[i]) {
 		case "castle":
 			break;
+		case "listening":
+		case "listen":
+		case "voice":
+		case "off":
+			voiceToggle();
+			break;
 		default:
 			// skip word
 		}
@@ -274,6 +318,7 @@ $('#startBtn').on('click', board.start);
 $('#clearBtn').on('click', board.clear);
 $('#colorBtn').on('click', board.flip);
 $('#backBtn').on('click', back);
+$('#voiceBtn').on('click', voiceToggle);
 
 //TODO: takes, which piece, castle, voice rec predictable mistakes...
 

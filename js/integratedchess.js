@@ -98,7 +98,9 @@ if (!('webkitSpeechRecognition' in window)) {
 	recognition.onerror = function(event) {
 	};
 	recognition.onend = function() {
-		this.start();
+		if (voiceOn) {
+			this.start();
+		}
 	};
 	recognition.onresult = function(event) {
 		var interim = "";
@@ -119,6 +121,7 @@ var voiceToggle = function() {
 		if (voiceOn) {
 			voiceOn = false;
 			$('#voiceBtn').prop('value', 'Start voice recognition');
+			recognition.stop();
 		} else {
 			recognition.start();
 			voiceOn = true;

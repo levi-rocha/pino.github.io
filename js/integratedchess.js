@@ -112,8 +112,6 @@ if (!('webkitSpeechRecognition' in window)) {
 			}
 		}
 	};
-	$('#voiceBtn').prop('value', 'Stop voice recognition');
-	voiceOn = true;
 }
 
 var voiceToggle = function() {
@@ -124,6 +122,7 @@ var voiceToggle = function() {
 		} else {
 			recognition.start();
 			voiceOn = true;
+			$('#voiceBtn').prop('value', 'Stop voice recognition');
 		}
 	}
 }

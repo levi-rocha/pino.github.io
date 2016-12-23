@@ -84,38 +84,45 @@ var back = function() {
 };
 
 var voiceOn = false;
+var voiceAvailable = false;
+
+if (!('webkitSpeechRecognition' in window)) {
+	alert("No speech recognition available on this browser. Please try using Chrome.");
+} else {
+	voiceAvailable = true;
+	var recognition = new webkitSpeechRecognition();
+	recognition.continuous = false;
+	recognition.interimResults = true;
+	recognition.onstart = function() {
+	};
+	recognition.onerror = function(event) {
+	};
+	recognition.onend = function() {
+		this.start();
+	};
+	recognition.onresult = function(event) {
+		var interim = "";
+		for (var i = event.resultIndex; i < event.results.length; ++i) {
+			if (event.results[i].isFinal) {
+				var result = event.results[i][0].transcript;
+				parseTranscript(result);
+				displayInput(interim + "[" + result + "]");
+			} else {
+				interim += "(" + event.results[i][0].transcript + ")";
+			}
+		}
+	};
+	$('#voiceBtn').prop('value', 'Stop voice recognition');
+	voiceOn = true;
+}
 
 var voiceToggle = function() {
-	if (voiceOn) {
-		voiceOn = false;
-		$('#voiceBtn').prop('value', 'Start voice recognition');
-	} else {
-		if (!('webkitSpeechRecognition' in window)) {
-			alert("No speech recognition available on this browser. Please try using Chrome.");
+	if (voiceAvailable) {
+		if (voiceOn) {
+			voiceOn = false;
+			$('#voiceBtn').prop('value', 'Start voice recognition');
 		} else {
-			var recognition = new webkitSpeechRecognition();
-			recognition.continuous = false;
-			recognition.interimResults = true;
-			recognition.onstart = function() {
-			};
-			recognition.onerror = function(event) {
-			};
-			recognition.onend = function() {
-				this.start();
-			};
-			recognition.onresult = function(event) {
-				var interim = "";
-				for (var i = event.resultIndex; i < event.results.length; ++i) {
-					if (event.results[i].isFinal) {
-						var result = event.results[i][0].transcript;
-						parseTranscript(result);
-						displayInput(interim + "[" + result + "]");
-					} else {
-						interim += "(" + event.results[i][0].transcript + ")";
-					}
-				}
-			};
-			$('#voiceBtn').prop('value', 'Stop voice recognition');
+			recognition.start();
 			voiceOn = true;
 		}
 	}
@@ -296,5 +303,5 @@ $('#voiceBtn').on('click', voiceToggle);
 //TODO: takes, which piece, castle, voice rec predictable mistakes...
 
 $(document).ready(function() {
-	recognition.start();
+	// start
 });

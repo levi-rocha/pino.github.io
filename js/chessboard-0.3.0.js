@@ -1599,6 +1599,7 @@ function mouseupWindow(e) {
 }
 
 function touchendWindow(e) {
+	alert("touch end");
   // do nothing if we are not dragging a piece
   if (DRAGGING_A_PIECE !== true) return;
 

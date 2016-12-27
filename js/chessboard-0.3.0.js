@@ -1068,7 +1068,7 @@ function snapbackDraggedPiece(square) {
 		return;
 	} else {
 		dropHandled = true;
-		setTimeout(function() {dropHandled=false;}, 200);
+		setTimeout(function() {dropHandled=false;}, 100);
 	}
 	
 	// if destination is same as source, piece stays picked up and is dropped at the next clicked square.
@@ -1614,18 +1614,9 @@ function mouseupWindow(e) {
   stopDraggedPiece(location);
 }
 
-var touchEndHandled = false;
-
 function touchendWindow(e) {
   // do nothing if we are not dragging a piece
   if (DRAGGING_A_PIECE !== true) return;
-  
-  if (touchEndHandled) {
-	  return;
-  } else {
-	  touchEndHandled = true;
-	  setTimeout(function() {touchEndHandled = false;}, 500);
-  }
 
   // get the location
   var location = isXYOnSquare(e.originalEvent.changedTouches[0].pageX,

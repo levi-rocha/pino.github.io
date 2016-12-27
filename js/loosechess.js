@@ -1,8 +1,8 @@
-var board2 = ChessBoard('board2', {
+var board = ChessBoard('board', {
 	draggable : true,
 	dropOffBoard : 'trash',
 	sparePieces : true,
 	position : 'start'
 });
-$('#startBtn').on('click', board2.start);
-$('#clearBtn').on('click', board2.clear);
+$('#startBtn').on('click', board.start);
+$('#clearBtn').on('click', board.clear);

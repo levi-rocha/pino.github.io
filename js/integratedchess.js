@@ -119,9 +119,9 @@ if (!('webkitSpeechRecognition' in window)) {
 var voiceToggle = function() {
 	if (voiceAvailable) {
 		if (voiceOn) {
+			recognition.stop();
 			voiceOn = false;
 			$('#voiceBtn').prop('value', 'Start voice recognition');
-			recognition.stop();
 		} else {
 			recognition.start();
 			voiceOn = true;
@@ -268,6 +268,10 @@ var parseTranscript = function(transcript) {
 		case "off":
 			voiceToggle();
 			break;
+		case "back":
+		case "beck":
+			back();
+			break;
 		default:
 			// skip word
 		}
@@ -302,7 +306,7 @@ $('#colorBtn').on('click', board.flip);
 $('#backBtn').on('click', back);
 $('#voiceBtn').on('click', voiceToggle);
 
-//TODO: takes, which piece, castle, voice rec predictable mistakes...
+//TODO: takes, which piece, castle, voice rec predictable mistakes, word-per-word
 
 $(document).ready(function() {
 	// start

@@ -1,0 +1,12 @@
+@CHARSET "ISO-8859-1";
+
+#board {
+	max-width: 480px;
+}
+
+.game-button {
+	height: 32px;
+	border-radius: 4px;
+	padding: 2px 8px 2px 8px;
+	margin: 1px;
+}

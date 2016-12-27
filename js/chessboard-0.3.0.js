@@ -1068,10 +1068,8 @@ function snapbackDraggedPiece(square) {
 		return;
 	} else {
 		snapBackHandled = true;
-		setTimeout(function() {snapBackHandled=false;}, 1000);
+		setTimeout(function() {snapBackHandled=false;}, 500);
 	}
-	
-	alert("snapbap: from " + square + " to " + DRAGGED_PIECE_SOURCE);
 	
 	// if destination is same as source, piece stays picked up and is dropped at the next clicked square.
 	if (CLICK_MOVE == false) {
@@ -1138,8 +1136,6 @@ function trashDraggedPiece() {
 }
 
 function dropDraggedPieceOnSquare(square) {
-	
-	alert("drop: from " + square + " to " + DRAGGED_PIECE_SOURCE);
 	
 	// if destination is same as source, piece stays picked up and is dropped at the next clicked square.
 	if (CLICK_MOVE == false) {

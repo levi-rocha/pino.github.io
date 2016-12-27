@@ -1694,6 +1694,7 @@ function addEvents() {
 
   // touch drag pieces
   if (isTouchDevice() === true) {
+	  $(window).off('click');
     boardEl.on('touchstart', '.' + CSS.square, touchstartSquare);
     containerEl.on('touchstart', '.' + CSS.sparePieces + ' .' + CSS.piece,
       touchstartSparePiece);

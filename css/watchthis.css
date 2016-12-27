@@ -1,0 +1,6 @@
+@CHARSET "ISO-8859-1";
+
+#screenshots img {
+	max-width: 100%;
+    height: auto;
+}

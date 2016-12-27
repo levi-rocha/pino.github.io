@@ -1060,15 +1060,15 @@ function removeSquareHighlights() {
     .removeClass(CSS.highlight1 + ' ' + CSS.highlight2);
 }
 
-var snapBackHandled = false;
+var dropHandled = false;
 
 function snapbackDraggedPiece(square) {
 	
-	if (snapBackHandled) {
+	if (dropHandled) {
 		return;
 	} else {
-		snapBackHandled = true;
-		setTimeout(function() {snapBackHandled=false;}, 500);
+		dropHandled = true;
+		setTimeout(function() {dropHandled=false;}, 500);
 	}
 	
 	// if destination is same as source, piece stays picked up and is dropped at the next clicked square.
@@ -1136,6 +1136,13 @@ function trashDraggedPiece() {
 }
 
 function dropDraggedPieceOnSquare(square) {
+	
+	if (dropHandled) {
+		return;
+	} else {
+		dropHandled = true;
+		setTimeout(function() {dropHandled=false;}, 500);
+	}
 	
 	// if destination is same as source, piece stays picked up and is dropped at the next clicked square.
 	if (CLICK_MOVE == false) {

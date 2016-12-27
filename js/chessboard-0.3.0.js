@@ -1130,6 +1130,8 @@ function trashDraggedPiece() {
 
 function dropDraggedPieceOnSquare(square) {
 	
+	alert("drop: from " + square + " to " + DRAGGED_PIECE_SOURCE);
+	
 	// if destination is same as source, piece stays picked up and is dropped at the next clicked square.
 	if (CLICK_MOVE == false) {
 		if (square === DRAGGED_PIECE_SOURCE) {
@@ -1665,6 +1667,11 @@ function mouseleaveSquare(e) {
 // Initialization
 //------------------------------------------------------------------------------
 
+function clickTest(e) {
+	alert("CLICK");
+	e.preventDefault();
+}
+
 function addEvents() {
   // prevent browser "image drag"
   $('body').on('mousedown mousemove', '.' + CSS.piece, stopDefault);
@@ -1694,12 +1701,12 @@ function addEvents() {
 
   // touch drag pieces
   if (isTouchDevice() === true) {
-	  $(window).off('click');
     boardEl.on('touchstart', '.' + CSS.square, touchstartSquare);
     containerEl.on('touchstart', '.' + CSS.sparePieces + ' .' + CSS.piece,
       touchstartSparePiece);
     $(window).on('touchmove', touchmoveWindow);
     $(window).on('touchend', touchendWindow);
+    $(window).on('click', clickTest);
   }
 }
 

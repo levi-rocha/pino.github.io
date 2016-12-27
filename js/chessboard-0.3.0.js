@@ -1068,7 +1068,7 @@ function snapbackDraggedPiece(square) {
 		return;
 	} else {
 		dropHandled = true;
-		setTimeout(function() {dropHandled=false;}, 500);
+		setTimeout(function() {dropHandled=false;}, 200);
 	}
 	
 	// if destination is same as source, piece stays picked up and is dropped at the next clicked square.
@@ -1141,7 +1141,7 @@ function dropDraggedPieceOnSquare(square) {
 		return;
 	} else {
 		dropHandled = true;
-		setTimeout(function() {dropHandled=false;}, 500);
+		setTimeout(function() {dropHandled=false;}, 200);
 	}
 	
 	// if destination is same as source, piece stays picked up and is dropped at the next clicked square.

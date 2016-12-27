@@ -83,6 +83,12 @@ var back = function() {
 	board.position(game.fen());
 };
 
+var reset = function() {
+	board.start();
+	game = new Chess();
+	updateStatus();
+};
+
 var voiceOn = false;
 var voiceAvailable = false;
 
@@ -300,7 +306,7 @@ $(window).resize(board.resize);
 
 updateStatus();
 
-$('#startBtn').on('click', board.start);
+$('#startBtn').on('click', reset);
 $('#clearBtn').on('click', board.clear);
 $('#colorBtn').on('click', board.flip);
 $('#backBtn').on('click', back);

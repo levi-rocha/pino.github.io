@@ -1602,9 +1602,18 @@ function mouseupWindow(e) {
   stopDraggedPiece(location);
 }
 
+var touchEndHandled = false;
+
 function touchendWindow(e) {
   // do nothing if we are not dragging a piece
   if (DRAGGING_A_PIECE !== true) return;
+  
+  if (touchEndHandled) {
+	  return;
+  } else {
+	  touchEndHandled = true;
+	  setTimeout(function() {touchEndHandled = false;}, 500);
+  }
 
   // get the location
   var location = isXYOnSquare(e.originalEvent.changedTouches[0].pageX,
@@ -1667,11 +1676,6 @@ function mouseleaveSquare(e) {
 // Initialization
 //------------------------------------------------------------------------------
 
-function clickTest(e) {
-	alert("CLICK");
-	e.preventDefault();
-}
-
 function addEvents() {
   // prevent browser "image drag"
   $('body').on('mousedown mousemove', '.' + CSS.piece, stopDefault);
@@ -1706,7 +1710,6 @@ function addEvents() {
       touchstartSparePiece);
     $(window).on('touchmove', touchmoveWindow);
     $(window).on('touchend', touchendWindow);
-    $(window).on('click', clickTest);
   }
 }
 

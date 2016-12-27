@@ -1060,7 +1060,16 @@ function removeSquareHighlights() {
     .removeClass(CSS.highlight1 + ' ' + CSS.highlight2);
 }
 
+var snapBackHandled = false;
+
 function snapbackDraggedPiece(square) {
+	
+	if (snapBackHandled) {
+		return;
+	} else {
+		snapBackHandled = true;
+		setTimeout(function() {snapBackHandled=false;}, 1000);
+	}
 	
 	alert("snapbap: from " + square + " to " + DRAGGED_PIECE_SOURCE);
 	

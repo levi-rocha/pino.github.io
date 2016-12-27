@@ -1062,6 +1062,8 @@ function removeSquareHighlights() {
 
 function snapbackDraggedPiece(square) {
 	
+	alert("snapbap: from " + square + " to " + DRAGGED_PIECE_SOURCE);
+	
 	// if destination is same as source, piece stays picked up and is dropped at the next clicked square.
 	if (CLICK_MOVE == false) {
 		if (square === DRAGGED_PIECE_SOURCE) {
@@ -1599,7 +1601,6 @@ function mouseupWindow(e) {
 }
 
 function touchendWindow(e) {
-	alert("touch end");
   // do nothing if we are not dragging a piece
   if (DRAGGING_A_PIECE !== true) return;
 

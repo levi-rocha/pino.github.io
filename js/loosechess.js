@@ -1,3 +1,9 @@
+/*
+ * Author: Levi Rocha
+ * https://pino.github.io
+ * Date: 28 Dec 2016
+ */
+
 var board = ChessBoard('board', {
 	draggable : true,
 	dropOffBoard : 'trash',

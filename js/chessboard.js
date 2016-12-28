@@ -6,6 +6,11 @@
  * http://chessboardjs.com/license
  *
  * Date: 10 Aug 2013
+ * 
+ * EDIT: 
+ * Modified by Levi Rocha
+ * https://github.com/pino
+ * Date: 28 Dec 2016
  */
 
 // start anonymous scope

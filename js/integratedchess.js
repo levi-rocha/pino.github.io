@@ -1,3 +1,9 @@
+/*
+ * Author: Levi Rocha
+ * https://pino.github.io
+ * Date: 28 Dec 2016
+ */
+
 var board, game = new Chess(), statusEl = $('#status'), fenEl = $('#fen'), pgnEl = $('#pgn');
 
 // do not pick up pieces if the game is over

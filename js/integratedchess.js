@@ -285,21 +285,22 @@ var parseTranscript = function(transcript) {
 };
 
 var displayInput = function(input) {
-	$("#inputDisplay").append(input);
-	$("#inputDisplay").append(" ; ");
+	$("#inputDisplay").html(input);
 }
 
 var makeMove = function(input) {
 	game.move(input);
 	updateStatus();
 	board.position(game.fen());
-	displayMove(input);
+	//displayMove(input);
 }
 
+/*
 var displayMove = function(input) {
 	$("#moveDisplay").append(input);
 	$("#moveDisplay").append(" ; ");
 }
+*/
 
 board = new ChessBoard('board', cfg);
 $(window).resize(board.resize);

@@ -28,10 +28,11 @@ body {
 }
 
 #links a {
-	font-size: 18px;
+	font-size: 16px;
+	margin: 10px;
 }
 
-#header h2 {
+#header h1 {
 	margin: 10px 5px 0px 10px;
 }
 
@@ -67,7 +68,7 @@ thead td {
 table, th, td {
 	border-style: solid;
 	border-color: #003366;
-	padding: 8px 10px 8px 10px;
+	padding: 10px 10px 10px 10px;
 }
 
 /* desktop */

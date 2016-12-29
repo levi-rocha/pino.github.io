@@ -15,6 +15,7 @@ body {
 	color: #333366;
 	margin: auto;
 	margin-bottom: 40px;
+	width: auto;
 }
 
 #author {
@@ -47,16 +48,16 @@ body {
 table {
 	border-collapse: collapse;
 	margin: auto;
-	width: 100%;
+	width: auto;
 }
 
-tr:nth-child(odd) {
-	background-color: #ffffff;
+tr:nth-child(4n), tr:nth-child(4n-1) {
+    background-color: #eeeeee;
 	color: #333366;
 }
 
-tr:nth-child(even) {
-	background-color: #eeeeee;
+tr:nth-child(4n-2), tr:nth-child(4n-3) {
+    background-color: #ffffff;
 	color: #333366;
 }
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buzzer</title>
+<link rel="stylesheet" type="text/css" href="css/projectpage.css" />
+<link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico?">
+</head>
+<body>
+
+	<div id="header">
+		<h1>Buzzer</h1>
+		<p>A buzzer system implemented using websocket and node.js.</p>
+		<p>Supports up to 12 buzzers with different soundbytes.</p>
+		<a href="https://github.com/pino/buzzer">GitHub Repository</a> 
+		<a href="https://github.com/pino/buzzer/archive/master.zip">Download .zip file</a>
+	</div>
+
+	<div id="screenshots">
+		<h2>Screenshots</h2>
+		<img id="ss1" alt="Screenshot with 8 buzzers enabled" src="img/buzzer-screenshots/8buzzerss.jpg" />
+	</div>
+
+	<div id="myModal" class="modal">
+		<!-- The Close Button -->
+		<span class="close"
+			onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+		<!-- Modal Content (The Image) -->
+		<img class="modal-content" id="img01">
+
+		<!-- Modal Caption (Image Text) -->
+		<div id="caption"></div>
+	</div>
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/buzzer.js"></script>
+</body>
+</html>

@@ -70,7 +70,7 @@ var correct = function () {
 
 var parseTranscript = function (transcript) {
     var input = transcript.toLowerCase();
-    if (input.indexOf("i'm satisfied") !== -1) {
+    if (input.indexOf("i'm satisfied") !== -1 || input.indexOf("i am satisfied") !== -1 || input.indexOf("unsatisfied") !== -1) {
         correct();
     } else {
         document.getElementById('answer').innerHTML = transcript;

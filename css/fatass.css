@@ -1,0 +1,37 @@
+body {
+    color: lawngreen;
+    text-align: center;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    background: black no-repeat center center;
+    height: 90vh;
+}
+
+#container {
+    margin: 25vh auto auto;
+    height: 50vh;
+    width: 100%;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    flex-wrap: wrap;
+}
+
+#container div {
+    margin: 10px;
+    width: 100%;
+}
+
+#answer {
+    color: red;
+}
+
+@media (min-width: 930px) {
+    #container {
+        font-size: 3em;
+    }
+}

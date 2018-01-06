@@ -1,0 +1,61 @@
+.filter-tag {
+    margin: 4px 0;
+    width: auto;
+    display: inline-block;
+    width: 160px;
+}
+
+.tag-name {
+    margin-left: 48px;
+    width: 120px;
+    line-height: 23px;
+    color: #ccc;
+    white-space: pre-line;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 23px;
+}
+
+.switch input {display:none;}
+
+input:checked + .slider {
+    background-color: green;
+}
+
+input:checked ~ .tag-name {
+    color: green;
+}
+
+input:checked + .slider:before {
+    transform: translateX(16px);
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 23px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}

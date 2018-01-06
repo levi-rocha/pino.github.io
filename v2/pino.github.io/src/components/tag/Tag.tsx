@@ -1,23 +1,25 @@
 import * as React from 'react';
 import Tag from '../../types/Tag';
+import './Tag.css';
 
 export interface TagProps {
     tag: Tag;
-    onToggle: () => {};
+    onToggle: (id: number, checked: boolean) => void;
 }
 
 const Tag: React.SFC<TagProps> = (props) => (
-    <React.Fragment>
-        <label>
+    <div className="filter-tag">
+        <label className="switch">
             <input 
                 name={props.tag.name}
                 type="checkbox"
                 checked={props.tag.isSelected}
-                onChange={props.onToggle}
+                onChange={(event) => props.onToggle(props.tag.id, event.target.checked)}
             />
-            {props.tag.name}
+            <span className="slider"/>
+            <div className="tag-name"> {props.tag.name} </div>
         </label>
-    </React.Fragment>
+    </div>
 );
 
 export default Tag;

@@ -4,11 +4,11 @@ import { Tag as TagComponent } from '../../components';
 
 export interface TagListProps {
     tags: Tag[];
-    onToggleTag: () => {};
+    onToggleTag: () => void;
 }
 
 const TagList: React.SFC<TagListProps> = (props) => (
-    <React.Fragment>
+    <div className="tag-list">
         {props.tags.map(tag => 
             <TagComponent 
                 key={tag.id} 
@@ -16,7 +16,7 @@ const TagList: React.SFC<TagListProps> = (props) => (
                 onToggle={props.onToggleTag}
             />
         )}
-    </React.Fragment>
+    </div>
 );
 
 export default TagList;

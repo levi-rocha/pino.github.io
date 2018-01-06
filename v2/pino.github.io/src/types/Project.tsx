@@ -7,4 +7,5 @@ export default interface Project {
     description: string;
     links: Link[];
     tags: Tag[];
+    images: string[];
 }

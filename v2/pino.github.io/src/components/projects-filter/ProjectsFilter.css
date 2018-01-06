@@ -1,11 +1,14 @@
 .filter-card {
-    border-style: solid;
 	border-radius: 8px;
-    border-color: #333366;
     width: 148px;
     padding: 4px 16px;
-    margin: 8px;
     overflow: hidden;
     background-color: #fff;
-    box-shadow: 2px 2px 5px #aaa;
+    box-shadow: 0 0 6px rgba(0,0,0,0.12), 0 0 6px rgba(0,0,0,0.24);
+}
+
+@media screen and (max-width: 550px) {
+    .filter-card {
+        width: auto;
+    }
 }

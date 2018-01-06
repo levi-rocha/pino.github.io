@@ -1,13 +1,13 @@
 import * as React from 'react';
-import { About, ProjectsFilter } from './components';
-import './App.css';
+import { SidePanel } from './components';
+import { MainPanel } from './containers';
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <About />
-        <ProjectsFilter />
+        <SidePanel />
+        <MainPanel />
       </div>
     );
   }

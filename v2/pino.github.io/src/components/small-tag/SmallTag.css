@@ -1,0 +1,14 @@
+.small-tag {
+    margin: 2px;
+    font-size: 9px;
+    background-color: grey;
+    border-radius: 2px;
+    padding: 2px 4px;
+    display: inline-block;
+    white-space: pre-line;
+}
+
+.small-tag.selected {
+    background-color: green;
+    color: white;
+}

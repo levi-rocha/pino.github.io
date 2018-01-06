@@ -1,0 +1,9 @@
+.main-panel {
+    margin: 24px 24px 12px 230px;
+}
+
+@media screen and (max-width: 550px) {
+    .main-panel {
+        margin: 8px;
+    }
+}

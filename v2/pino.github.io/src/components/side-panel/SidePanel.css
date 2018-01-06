@@ -1,0 +1,20 @@
+.side-panel {
+    position: absolute;
+    margin: 0 18px;
+}
+
+.side-panel > div {
+    margin: 0 0 18px 0;
+}
+
+@media screen and (max-width: 550px) {
+    .side-panel {
+        position: relative;
+        margin: 8px;
+        display: block;
+    }
+    
+    .side-panel > div {
+        margin: 0 0 8px 0;
+    }
+}

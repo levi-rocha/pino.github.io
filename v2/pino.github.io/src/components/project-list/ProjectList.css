@@ -1,0 +1,13 @@
+.project-list div {
+    display: inline-block;
+}
+
+.project-list h1 {
+    margin-left: 24px;
+}
+
+@media screen and (max-width: 550px) {
+    .project-list {
+        text-align: center;
+    }
+}

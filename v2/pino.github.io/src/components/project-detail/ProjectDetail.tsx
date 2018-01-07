@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Project } from '../../types';
-import { ProjectImage, ProjectLink } from '../../components';
+import { SmallTagList, ProjectImage, ProjectLink } from '../../components';
 import './ProjectDetail.css';
 
 export interface ProjectDetailProps {
@@ -11,6 +11,7 @@ const ProjectDetail: React.SFC<ProjectDetailProps> = (props) => (
         <div className="project-detail">
             <h1>{props.project.title}</h1>
             <p>{props.project.description}</p>
+            <SmallTagList tags={props.project.tags}/>
             <div>
             {props.project.links.map(link =>
                 <ProjectLink key={link.id} {...link} />

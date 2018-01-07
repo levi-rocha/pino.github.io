@@ -1,9 +1,9 @@
 .small-tag {
     margin: 2px;
     font-size: 9px;
-    background-color: grey;
-    border-radius: 2px;
-    padding: 2px 4px;
+    background-color: #ccc;
+    border-radius: 9px;
+    padding: 3px 6px;
     display: inline-block;
     white-space: pre-line;
     transition: all 0.35s cubic-bezier(.25,.8,.25,1);

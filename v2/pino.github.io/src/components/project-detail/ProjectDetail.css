@@ -1,15 +1,27 @@
 .project-detail {
     padding: 4px 0 4px 24px;
     overflow-x: hidden;
+    position: relative;
 }
 
 .project-detail p {
     font-size: 16px;
 }
 
+.project-detail .small-tag-list {
+    position: relative;
+    text-align: left;
+    margin: 24px 4px 4px 6px;
+}
+
+.project-detail .small-tag {
+    font-size: 10px;
+    border-radius: 10px;
+}
+
 @media screen and (max-width: 600px) {
     .project-detail {
-        padding: 8px;
+        padding: 8px 8px 8px 12px;
         overflow-x: hidden;
     }
 }

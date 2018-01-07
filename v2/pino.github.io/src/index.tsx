@@ -8,6 +8,9 @@ import './index.css';
 
 const store = configureStore();
 
+const Modal = require('react-modal');
+Modal.setAppElement('#root');
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

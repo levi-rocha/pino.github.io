@@ -1,10 +1,13 @@
 import { StoreState, Project, Tag, Link } from './types';
 import { default as tagsReducer } from './ducks/tags';
-import { createStore } from 'redux';
+import { default as modalReducer } from './ducks/modal';
+import { createStore, combineReducers } from 'redux';
 import { Store } from 'react-redux';
 
+const reducer =  combineReducers<StoreState>({tags: tagsReducer, modal: modalReducer});
+
 const configureStore = (): Store<StoreState> =>
-createStore<StoreState>(tagsReducer, readInitialStateFromJson());
+createStore<StoreState>(reducer, readInitialStateFromJson());
 
 export default configureStore;
 
@@ -47,10 +50,16 @@ function readInitialStateFromJson() {
         });
     }
     const initialState: StoreState = {
-        projects: projects,
-        tags: tags,
-        allTagsSelected: false,
-        filteredProjects: projects
+        tags: {
+            projects: projects,
+            tags: tags,
+            allTagsSelected: false,
+            filteredProjects: projects,
+        }, modal: {
+            modalIsOpen: false,
+            openProject: undefined
+        }
+        
     };
     return initialState;
 }

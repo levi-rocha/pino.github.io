@@ -1,0 +1,31 @@
+.ReactModal__Content {
+    top: 40px !important;
+    left: 160px !important;
+    right: 160px !important;
+    bottom: 40px !important;
+    box-shadow: 0 0 6px rgba(0,0,0,0.12), 0 0 6px rgba(0,0,0,0.24);
+}
+
+.close-button {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+}
+
+@media screen and (max-width: 1000px) {
+    .ReactModal__Content {
+        top: 40px !important;
+        left: 40px !important;
+        right: 40px !important;
+        bottom: 40px !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .ReactModal__Content {
+        top: 36px !important;
+        left: 18px !important;
+        right: 18px !important;
+        bottom: 36px !important;
+    }
+}

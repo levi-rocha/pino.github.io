@@ -5,6 +5,7 @@ import './ProjectList.css';
 
 export interface ProjectListProps {
     projects: Project[];
+    projectClick: () => void;
 }
 
 const ProjectList: React.SFC<ProjectListProps> = (props) => (
@@ -14,6 +15,7 @@ const ProjectList: React.SFC<ProjectListProps> = (props) => (
             <ProjectCard
                 key={project.id}
                 project={project}
+                projectClick={props.projectClick}
             />
         )}
     </div>

@@ -4,8 +4,8 @@ import { connect, Dispatch } from 'react-redux';
 import * as tagActions from '../../ducks/tags';
 
 const mapStateToProps = (state: StoreState) => ({
-    tags: state.tags,
-    allTagsSelected: state.allTagsSelected
+    tags: state.tags.tags,
+    allTagsSelected: state.tags.allTagsSelected
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>) => ({

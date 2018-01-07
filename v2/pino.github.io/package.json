@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-modal": "^3.1.10",
     "react-redux": "^5.0.6",
     "react-redux-typescript": "^3.0.0-rc.2",
     "react-scripts-ts": "2.8.0",

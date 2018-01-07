@@ -5,6 +5,7 @@ import './ProjectCard.css';
 
 export interface ProjectCardProps {
     project: Project;
+    projectClick: (openProject: Project) => void;
 }
 
 const ProjectCard: React.SFC<ProjectCardProps> = (props) => {
@@ -14,7 +15,10 @@ const ProjectCard: React.SFC<ProjectCardProps> = (props) => {
         : null;
     
     return (
-        <div className="project-card">
+        <div 
+            className="project-card"
+            onClick={(event) => props.projectClick(props.project)}
+        >
             <div className="image-port">{image}</div> 
             <p>{props.project.title}</p>
             <SmallTagList tags={props.project.tags}/>

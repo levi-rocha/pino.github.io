@@ -1,4 +1,4 @@
-import { StoreState, Tag } from '../types';
+import { Tag } from '../types';
 import Project from '../types/Project';
 
 /* constants and types */
@@ -19,6 +19,13 @@ interface ToggleSelectAllTags {
 
 export type Action = ToggleTag | ToggleSelectAllTags;
 
+export interface TagsState {
+    projects: Project[];
+    filteredProjects: Project[];
+    tags: Tag[];
+    allTagsSelected: boolean;
+}
+
 /* action creators */
 
 export function toggleTag(id: number, checked: boolean): ToggleTag {
@@ -37,21 +44,27 @@ export function toggleSelectAllTags(): ToggleSelectAllTags {
 
 /* reducer */
 
-export default function reducer(state: StoreState, action: Action): StoreState {
+const initialState: TagsState = {
+    projects: [],
+    tags: [],
+    allTagsSelected: false,
+    filteredProjects: []
+};
+
+export default function reducer(state: TagsState = initialState, action: Action): TagsState {
     switch (action.type) {
         case TOGGLE_TAG: {
             const updatedTags = getUpdatedTagsAfterSingleToggle(state.tags, action.id, action.checked);
             const updatedProjects = getUpdatedProjects(state.projects, updatedTags);
             const updatedFilteredProjects = noTagsSelected(updatedTags) 
-                ? updatedProjects
-                : getFilteredProjects(updatedProjects);
+            ? updatedProjects
+            : getFilteredProjects(updatedProjects);
             const updatedAllTagsSelected = allTagsSelected(updatedTags) 
-                ? true 
-                : noTagsSelected(updatedTags) 
-                    ? false
-                    : state.allTagsSelected;
+            ? true 
+            : noTagsSelected(updatedTags) 
+            ? false
+            : state.allTagsSelected;
             return { 
-                ...state, 
                 projects: updatedProjects,
                 filteredProjects: updatedFilteredProjects,
                 tags: updatedTags,
@@ -73,17 +86,17 @@ export default function reducer(state: StoreState, action: Action): StoreState {
                 })};
             });
             const updatedFilteredProjects = allTagsAreSelected
-                ? getFilteredProjects(updatedProjects)
-                : updatedProjects;
+            ? getFilteredProjects(updatedProjects)
+            : updatedProjects;
             return {
-                ...state,
+                projects: updatedProjects,
                 filteredProjects: updatedFilteredProjects,
                 tags: updatedTags,
                 allTagsSelected: allTagsAreSelected
             };
         }
         default:
-            return state;
+        return state;
     }
 }
 
@@ -94,37 +107,37 @@ function getUpdatedTagsAfterSingleToggle(tags: Tag[], toggledTagId: number, chec
         ? {...tag, isSelected: checked }
         : tag );
 }
-
+    
 function allTagsSelected(tags: Tag[]): boolean {
-    return getSelectedTagCount(tags) === tags.length;
-}
-
-function noTagsSelected(tags: Tag[]): boolean {
-    return getSelectedTagCount(tags) === 0;
-}
-
-function getSelectedTagCount(tags: Tag[]): number {
-    return tags.filter(tag => tag.isSelected).length;
-}
-
-function getFilteredProjects(projects: Project[]): Project[] {
-    return projects.filter(project => project.tags.filter(tag => tag.isSelected).length > 0);
-}
-
-function getUpdatedProjects(projects: Project[], tags: Tag[]): Project[] {
-    let selectedTags: number[] = [];
-    for (let tag of tags) {
-        if (tag.isSelected) {
-            selectedTags.push(tag.id);
-        }
+        return getSelectedTagCount(tags) === tags.length;
     }
-    return projects.map(project => updateProjectTags(project, selectedTags));
-}
-
+    
+function noTagsSelected(tags: Tag[]): boolean {
+        return getSelectedTagCount(tags) === 0;
+    }
+    
+function getSelectedTagCount(tags: Tag[]): number {
+        return tags.filter(tag => tag.isSelected).length;
+    }
+    
+function getFilteredProjects(projects: Project[]): Project[] {
+        return projects.filter(project => project.tags.filter(tag => tag.isSelected).length > 0);
+    }
+    
+function getUpdatedProjects(projects: Project[], tags: Tag[]): Project[] {
+        let selectedTags: number[] = [];
+        for (let tag of tags) {
+            if (tag.isSelected) {
+                selectedTags.push(tag.id);
+            }
+        }
+        return projects.map(project => updateProjectTags(project, selectedTags));
+    }
+    
 function updateProjectTags(project: Project, selectedTagIds: number[]): Project {
-    let updatedProjectTags = project.tags.map(tag => 
-        selectedTagIds.indexOf(tag.id) < 0 
+        let updatedProjectTags = project.tags.map(tag => 
+            selectedTagIds.indexOf(tag.id) < 0 
             ? {...tag, isSelected: false} 
             : {...tag, isSelected: true});
-    return {...project, tags: updatedProjectTags};
-}
+        return {...project, tags: updatedProjectTags};
+        }

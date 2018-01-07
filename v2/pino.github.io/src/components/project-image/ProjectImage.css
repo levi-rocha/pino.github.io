@@ -1,0 +1,26 @@
+.project-image {
+    display: inline-block;
+    margin: 18px 24px 6px 0;
+    width: 520px;
+    height: 460px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 4px rgba(0,0,0,0.12), 0 0 4px rgba(0,0,0,0.24);
+}
+
+.project-image img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 100%;
+    width: auto;
+    transform: translate(-50%,-50%);
+}
+
+@media screen and (max-width: 600px) {
+    .project-image {
+        width: 100%;
+        margin: 8px 0 8px 0;
+    }
+}

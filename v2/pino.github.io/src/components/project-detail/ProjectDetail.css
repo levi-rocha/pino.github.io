@@ -1,0 +1,15 @@
+.project-detail {
+    padding: 4px 0 4px 24px;
+    overflow-x: hidden;
+}
+
+.project-detail p {
+    font-size: 16px;
+}
+
+@media screen and (max-width: 600px) {
+    .project-detail {
+        padding: 8px;
+        overflow-x: hidden;
+    }
+}

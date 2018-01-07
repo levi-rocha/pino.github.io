@@ -1,15 +1,29 @@
 .ReactModal__Content {
     top: 40px !important;
-    left: 160px !important;
-    right: 160px !important;
+    left: 192px !important;
+    right: 192px !important;
     bottom: 40px !important;
+    padding: 0 !important;
     box-shadow: 0 0 6px rgba(0,0,0,0.12), 0 0 6px rgba(0,0,0,0.24);
 }
 
 .close-button {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
+    position: fixed;
+    top: 52px;
+    right: 218px;
+    font-size: 16px;
+    padding: 4px 16px;
+    border: none;
+    border-radius: 16px;
+    background-color: white;
+    box-shadow: 0 0 6px rgba(0,0,0,0.12), 0 0 6px rgba(0,0,0,0.24);
+    transition: all 0.35s cubic-bezier(.25,.8,.25,1);
+}
+
+.close-button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+    box-shadow: 0 0 12px rgba(0,0,0,0.24), 0 0 12px rgba(0,0,0,0.32);
 }
 
 @media screen and (max-width: 1000px) {
@@ -19,13 +33,24 @@
         right: 40px !important;
         bottom: 40px !important;
     }
+    .close-button {
+        right: 64px;
+    }
 }
 
 @media screen and (max-width: 600px) {
     .ReactModal__Content {
-        top: 36px !important;
-        left: 18px !important;
-        right: 18px !important;
-        bottom: 36px !important;
+        top: 42px !important;
+        left: 2% !important;
+        right: 2% !important;
+        bottom: 2% !important;
+    }
+    .close-button {
+        top: 8px;
+        right: 18px;
+        box-shadow: 0 0 12px rgba(0,0,0,0.24), 0 0 12px rgba(0,0,0,0.32);
+    }
+    ::-scrollbar { 
+        display: none; 
     }
 }

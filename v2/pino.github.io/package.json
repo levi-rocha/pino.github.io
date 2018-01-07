@@ -2,7 +2,9 @@
   "name": "pino.github.io",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://pino.github.io",
   "dependencies": {
+    "gh-pages": "^1.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-modal": "^3.1.10",
@@ -13,6 +15,8 @@
     "typesafe-actions": "^1.1.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",

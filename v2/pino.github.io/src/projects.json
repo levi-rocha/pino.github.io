@@ -1,114 +1,100 @@
 [
     {
-        "id": 1,
-        "title": "I like big butts and I cannot lie",
-        "description": "your other brothers can't deny",
+        "id": 996,
+        "title": "Eu Resolvo",
+        "description": "A social media webservice for sharing problems and solutions.",
         "links": [
-            {"url":"http://pudim.com.br", "title":"Pudim"},
-            {"url":"https://github.com/pino/pino.github.io", "title":"GitHub Repo"},
-            {"url":"http://pudim.com.br", "title":"Pudim"},
-            {"url":"http://pudim.com.br", "title":"Pudim"},
-            {"url":"http://pudim.com.br", "title":"Pudim"}
+            {"url":"https://github.com/pino/resolve-rest", "title":"REST API GitHub Repo"},
+            {"url":"https://github.com/pino/resolve-web", "title":"Web app GitHub Repo"},
+            {"url":"https://github.com/pino/resolve-mobile", "title":"Android app GitHub Repo"}
         ],
         "tags": [
-            "Angular",
-            "Javascript"
-        ],
-        "images": ["image.gif", "image2.jpg", "image3.png", "image4.jpg", "image5.png"]
-    },
-    {
-        "id": 2,
-        "title": "project2",
-        "description": "another project",
-        "links": [],
-        "tags": [
-            "Javascript",
-            "Redux"
-        ],
-        "images": ["image2.jpg", "image3.png"]
-    },
-    {
-        "id": 3,
-        "title": "I like big butts and I cannot lie",
-        "description": "your other brothers can't deny",
-        "links": [],
-        "tags": [
-            "really long tag name",
-            "Angular",
-            "Javascript",
-            "Redux",
             "Java",
-            "spring",
-            "react",
-            "webpack",
-            "bla",
-            "bla2",
-            "bla3",
-            "bla4",
-            "bla5"
+            "Spring",
+            "REST API",
+            "PostgreSQL",
+            "Angular 2",
+            "Typescript",
+            "Javascript",
+            "Material Design",
+            "Android",
+            "Cloud hosted",
+            "Open source"
         ],
-        "images": ["image.gif"]
+        "images": ["euresolvo.png", "euresolvo2.png", "euresolvo3.png", "euresolvo4.png"]
     },
     {
-        "id": 4,
-        "title": "I like big butts and I cannot lie",
-        "description": "your other brothers can't deny",
-        "links": [],
-        "tags": [
-            "really long tag name"
+        "id": 997,
+        "title": "Watch This",
+        "description": "A series recommendation app for android devices. Given an anime series as a starting point, uses the MyAnimeList API and website to gather data, which is plugged into a complex algorithm to find other similar series the user might like.",
+        "links": [
+            {"url":"https://play.google.com/store/apps/details?id=pino.github.io.watchthisandroid", "title":"Download it on the Google Play Store"}
         ],
-        "images": ["image.gif"]
+        "tags": [
+            "Android",
+            "Java",
+            "Service APIs",
+            "Material Design"
+            
+        ],
+        "images": ["watchthis.webp", "watchthis2.webp"]
     },
     {
-        "id": 5,
-        "title": "I like big butts and I cannot lie",
-        "description": "your other brothers can't deny",
-        "links": [],
-        "tags": [
-            "REST"
+        "id": 998,
+        "title": "Core Financeiro",
+        "description": "A financial management webservice for small to medium companies.",
+        "links": [
+            {"url":"http://www.corefinanceiro.com.br/", "title":"Check out the landpage"}
         ],
-        "images": ["image.gif"]
-    },
-    {
-        "id": 6,
-        "title": "I like big butts and I cannot lie",
-        "description": "your other brothers can't deny",
-        "links": [],
         "tags": [
+            ".NET MVC",
+            "C#",
+            "SQL Server",
+            "HTML5",
+            "CSS",
+            "Knockout.js",
+            "Aurelia",
+            "Javascript",
             "Cloud hosted"
         ],
-        "images": ["image.gif"]
+        "images": ["corefinanceiro.png", "corefinanceiro2.png"]
     },
     {
-        "id": 7,
-        "title": "I like big butts and I cannot lie",
-        "description": "your other brothers can't deny",
-        "links": [],
-        "tags": [
-            "angular",
-            "C#"
+        "id": 1000,
+        "title": "This Portfolio",
+        "description": "My portfolio website, showcasing some of the projects I've worked on.",
+        "links": [
+            {"url":"https://github.com/pino/pino.github.io", "title":"Check out the GitHub Repo"}
         ],
-        "images": ["image.gif"]
-    },
-    {
-        "id": 8,
-        "title": "I like big butts and I cannot lie",
-        "description": "your other brothers can't deny",
-        "links": [],
         "tags": [
+            "HTML5",
+            "CSS",
+            "React",
+            "Redux",
             "Javascript",
-            "really long tag name"
+            "Typescript",
+            "Open source"
         ],
-        "images": ["image.gif"]
+        "images": ["portfolio.png", "portfolio2.png"]
     },
     {
-        "id": 9,
-        "title": "I like big butts and I cannot lie",
-        "description": "your other brothers can't deny",
-        "links": [],
-        "tags": [
-            ".NET Core"
+        "id": 999,
+        "title": "Annotate",
+        "description": "[ Nov 2017 Vanhackathon Submission ] A webservice for creating and sharing annotations and hightlights on articles.",
+        "links": [
+            {"url":"https://annotate-app.herokuapp.com/", "title":"Access it on Heroku"},
+            {"url":"https://github.com/pino/annotate", "title":"Check out the GitHub Repo"}
         ],
-        "images": ["image.gif"]
+        "tags": [
+            "HTML5",
+            "CSS",
+            "React",
+            "Redux",
+            "Javascript",
+            "Material Design",
+            "Cloud hosted",
+            "Open source"
+        ],
+        "images": ["annotate.png", "annotate2.png"]
     }
 ]

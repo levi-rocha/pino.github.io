@@ -27,7 +27,7 @@ function readInitialStateFromJson() {
         }
         let projectTags: Tag[] = [];
         for (let tagData of projectData.tags) {
-            let existingTag: Tag | undefined = tags.find(tag => tag.name === tagData);
+            let existingTag: Tag | undefined = tags.find(tag => tag.name.toLowerCase() === tagData.toLowerCase());
             if (!isTag(existingTag)) {
                 let newTag: Tag = {
                     id: lastId++,
@@ -40,6 +40,7 @@ function readInitialStateFromJson() {
                 projectTags.push(existingTag);
             }
         }
+        projectTags.sort((a, b) => a.name.localeCompare(b.name));
         projects.push({
             id: projectData.id,
             title: projectData.title,
@@ -49,6 +50,7 @@ function readInitialStateFromJson() {
             tags: projectTags
         });
     }
+    tags.sort((a, b) => a.name.localeCompare(b.name));
     const initialState: StoreState = {
         tags: {
             projects: projects,
@@ -57,7 +59,9 @@ function readInitialStateFromJson() {
             filteredProjects: projects,
         }, modal: {
             modalIsOpen: false,
-            openProject: undefined
+            openProject: undefined,
+            imageModalIsOpen: false,
+            openImage: 'placeholder.png'
         }
         
     };

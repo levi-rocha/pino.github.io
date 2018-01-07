@@ -21,7 +21,7 @@ const ProjectsFilter: React.SFC<ProjectsFilterProps> = (props) => {
   
   return (
     <div className="filter-card">
-      <div> Filter projects by tag: </div>
+      <div> Filter projects: </div>
       <TagComponent 
         key={-1} 
         tag={selectAllTag} 

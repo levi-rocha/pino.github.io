@@ -6,7 +6,13 @@
     border-radius: 8px;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 0 4px rgba(0,0,0,0.12), 0 0 4px rgba(0,0,0,0.24);
+    box-shadow: 0 0 6px rgba(0,0,0,0.12), 0 0 6px rgba(0,0,0,0.24);
+    transition: all 0.35s cubic-bezier(.25,.8,.25,1);
+    cursor: pointer;
+}
+
+.project-image:hover {
+    box-shadow: 0 0 12px rgba(0,0,0,0.12), 0 0 12px rgba(0,0,0,0.24);
 }
 
 .project-image img {

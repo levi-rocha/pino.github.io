@@ -3,8 +3,14 @@ import { Project } from '../../types';
 import { SmallTagList, ProjectImage, ProjectLink } from '../../components';
 import './ProjectDetail.css';
 
+const Modal = require('react-modal');
+
 export interface ProjectDetailProps {
     project: Project;
+    imageIsOpen: boolean;
+    openImageSrc: string;
+    openImage: () => void;
+    closeImage: () => void;
 }
 
 const ProjectDetail: React.SFC<ProjectDetailProps> = (props) => (
@@ -18,8 +24,17 @@ const ProjectDetail: React.SFC<ProjectDetailProps> = (props) => (
             )}
             </div>
             {props.project.images.map(image =>
-                <ProjectImage key={image} imageSrc={image}/>
+                <ProjectImage key={image} imageSrc={image} onOpen={props.openImage} {...props}/>
             )}
+            <Modal
+                id="projectImage"
+                contentLabel="project image"
+                isOpen={props.imageIsOpen}
+                onRequestClose={() => props.closeImage()}
+            >
+                <img src={require('../../resource/' + props.openImageSrc)}      alt="screenshot"/>
+                <button className="close-button" onClick={(event) => props.closeImage()}>Close</button>
+            </Modal>
         </div>
     );
 

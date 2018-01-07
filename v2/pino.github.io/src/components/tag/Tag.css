@@ -1,8 +1,9 @@
 .filter-tag {
-    margin: 4px 0;
+    padding: 4px 0;
     width: auto;
     display: inline-block;
     width: 160px;
+    border-radius: 8px;
 }
 
 .tag-name {
@@ -16,8 +17,15 @@
 .switch {
     position: relative;
     display: inline-block;
+    border-radius: 23px;
     width: 40px;
     height: 23px;
+    cursor: pointer;
+}
+
+.switch:hover {
+    transition: box-shadow 0.25s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 0 8px green;
 }
 
 .switch input {display:none;}
@@ -36,7 +44,6 @@ input:checked + .slider:before {
 
 .slider {
     position: absolute;
-    cursor: pointer;
     top: 0;
     left: 0;
     right: 0;

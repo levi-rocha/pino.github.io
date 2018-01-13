@@ -18,7 +18,7 @@
 .project-link:hover {
     opacity: 0.8;
     cursor: pointer;
-    box-shadow: 0 0 12px rgba(0,0,0,0.24), 0 0 12px rgba(0,0,0,0.32);
+    box-shadow: 0 0 18px rgba(0,99,0,0.36), 0 0 24px rgba(0,99,0,0.48);
 }
 
 @media screen and (max-width: 600px) {

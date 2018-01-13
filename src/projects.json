@@ -1,55 +1,16 @@
 [
     {
-        "id": 996,
-        "title": "Eu Resolvo",
-        "description": "A social media webservice for sharing problems and solutions.",
-        "links": [
-            {"url":"https://github.com/pino/resolve-rest", "title":"REST API GitHub Repo"},
-            {"url":"https://github.com/pino/resolve-web", "title":"Web app GitHub Repo"},
-            {"url":"https://github.com/pino/resolve-mobile", "title":"Android app GitHub Repo"}
-        ],
-        "tags": [
-            "Java",
-            "Spring",
-            "REST API",
-            "PostgreSQL",
-            "Angular 2",
-            "Typescript",
-            "Javascript",
-            "Material Design",
-            "Android",
-            "Cloud hosted",
-            "Open source"
-        ],
-        "images": ["euresolvo.png", "euresolvo2.png", "euresolvo3.png", "euresolvo4.png"]
-    },
-    {
-        "id": 997,
-        "title": "Watch This",
-        "description": "A series recommendation app for android devices. Given an anime series as a starting point, uses the MyAnimeList API and website to gather data, which is plugged into a complex algorithm to find other similar series the user might like.",
-        "links": [
-            {"url":"https://play.google.com/store/apps/details?id=pino.github.io.watchthisandroid", "title":"Download it on the Google Play Store"}
-        ],
-        "tags": [
-            "Android",
-            "Java",
-            "Service APIs",
-            "Material Design"
-            
-        ],
-        "images": ["watchthis.webp", "watchthis2.webp"]
-    },
-    {
-        "id": 998,
+        "id": 900,
         "title": "Core Financeiro",
-        "description": "A financial management webservice for small to medium companies.",
+        "description": "A financial management webservice for small to medium companies. With no installation required, provides entrepreneurs  and accountants with many important features for financial management and sales.",
         "links": [
-            {"url":"http://www.corefinanceiro.com.br/", "title":"Check out the landpage"}
+            {"url":"http://www.corefinanceiro.com.br/", "title":"Landpage"}
         ],
         "tags": [
             ".NET MVC",
             "C#",
             "SQL Server",
+            "Service APIs",
             "HTML5",
             "CSS",
             "Knockout.js",
@@ -60,11 +21,26 @@
         "images": ["corefinanceiro.png", "corefinanceiro2.png"]
     },
     {
-        "id": 1000,
+        "id": 910,
+        "title": "Watch This",
+        "description": "A series recommendation app for android devices. Given an anime series as a starting point, uses the MyAnimeList API and website to gather data, which is plugged into a complex algorithm to find other similar series the user might like.",
+        "links": [
+            {"url":"https://play.google.com/store/apps/details?id=pino.github.io.watchthisandroid", "title":"Download it on the Google Play Store"}
+        ],
+        "tags": [
+            "Android",
+            "Java",
+            "Service APIs",
+            "Material Design"
+        ],
+        "images": ["watchthis.webp", "watchthis2.webp"]
+    },
+    {
+        "id": 2000,
         "title": "This Portfolio",
         "description": "My portfolio website, showcasing some of the projects I've worked on.",
         "links": [
-            {"url":"https://github.com/pino/pino.github.io", "title":"Check out the GitHub Repo"}
+            {"url":"https://github.com/pino/pino.github.io", "title":"GitHub Repo"}
         ],
         "tags": [
             "HTML5",
@@ -75,15 +51,99 @@
             "Typescript",
             "Open source"
         ],
-        "images": ["portfolio.png", "portfolio2.png"]
+        "images": ["portfolio4.png", "portfolio.png", "portfolio2.png"]
     },
     {
-        "id": 999,
+        "id": 927,
+        "title": "Eu Resolvo Web App",
+        "description": "Web version of the Eu Resolvo application - A social media webservice for sharing problems and solutions.",
+        "links": [
+            {"url":"https://github.com/pino/resolve-web", "title":"GitHub Repo"}
+        ],
+        "tags": [
+            "Service APIs",
+            "Angular 2",
+            "Typescript",
+            "Javascript",
+            "HTML5",
+            "CSS",
+            "Express",
+            "Material Design",
+            "Cloud hosted",
+            "Open source"
+        ],
+        "images": ["euresolvo.png", "euresolvo2.png", "euresolvo3.png", "euresolvo4.png"]
+    },
+    {
+        "id": 928,
+        "title": "Eu Resolvo REST API",
+        "description": "REST API for the Eu Resolvo application - A social media webservice for sharing problems and solutions.",
+        "links": [
+            {"url":"https://github.com/pino/resolve-rest", "title":"GitHub Repo"}
+        ],
+        "tags": [
+            "Java",
+            "Spring",
+            "Service APIs",
+            "PostgreSQL",
+            "Cloud hosted",
+            "Open source"
+        ],
+        "images": ["euresolvo3.png", "euresolvo4.png", "euresolvoandroid2.png", "euresolvoandroid1.png"]
+    },
+    {
+        "id": 929,
+        "title": "Eu Resolvo Android App",
+        "description": "Adroid version of the Eu Resolvo application - A social media webservice for sharing problems and solutions.",
+        "links": [
+            {"url":"https://github.com/pino/resolve-mobile", "title":"GitHub Repo"}
+        ],
+        "tags": [
+            "Java",
+            "Service APIs",
+            "Material Design",
+            "Android",
+            "Open source"
+        ],
+        "images": ["euresolvoandroid2.png", "euresolvoandroid1.png", "euresolvoandroid3.png"]
+    },
+    {
+        "id": 940,
+        "title": "Braze Sentina",
+        "description": "A Sensor system that provides spatial awareness for wheelchair users.",
+        "links": [
+            {"url":"https://brazemobility.com/collections/sentina/products/sentina", "title":"Product page"}
+        ],
+        "tags": [
+            "C++",
+            "Arduino"
+        ],
+        "images": ["sentina1.png", "sentina2.png"]
+    },
+    {
+        "id": 941,
+        "title": "Braze Sentina App",
+        "description": "A companion app for the Braze Sentina system. Allows the user to customize the system's settings via bluetooth.",
+        "links": [
+            {"url":"https://brazemobility.com/collections/sentina/products/sentina", "title":"Product page"}
+        ],
+        "tags": [
+            "Angular js",
+            "Ionic",
+            "Javascript",
+            "HTML5",
+            "CSS",
+            "Bluetooth LE"
+        ],
+        "images": ["brazeapp3.png", "brazeapp1.png", "brazeapp2.png"]
+    },
+    {
+        "id": 950,
         "title": "Annotate",
         "description": "[ Nov 2017 Vanhackathon Submission ] A webservice for creating and sharing annotations and hightlights on articles.",
         "links": [
             {"url":"https://annotate-app.herokuapp.com/", "title":"Access it on Heroku"},
-            {"url":"https://github.com/pino/annotate", "title":"Check out the GitHub Repo"}
+            {"url":"https://github.com/pino/annotate", "title":"GitHub Repo"}
         ],
         "tags": [
             "HTML5",
@@ -96,5 +156,52 @@
             "Open source"
         ],
         "images": ["annotate.png", "annotate2.png"]
+    },
+    {
+        "id": 960,
+        "title": "Buzzer",
+        "description": "A buzzer system for quiz-like games. Provides host with a host screen, and each player/team can join as a individual buzzer through the buzzer page (generally using their smatphones).",
+        "links": [
+            {"url":"https://github.com/pino/buzzer", "title":"GitHub Repo"}
+        ],
+        "tags": [
+            "Javascript",
+            "HTML5",
+            "CSS",
+            "Websockets",
+            "Express",
+            "Open source"
+        ],
+        "images": ["8buzzerss.jpg"]
+    },
+    {
+        "id": 970,
+        "title": "Chessboards",
+        "description": "A responsive Chessboard with game logic integration and Speech recognition; And a dumb chessboard with no game logic (for studying purposes).",
+        "links": [
+            {"url":"https://github.com/pino/voice-chessboard", "title":"Voice Chessboard GitHub Repo"},
+            {"url":"https://github.com/pino/dumb-chessboard", "title":"'Dumb' Chessboard GitHub Repo"}
+        ],
+        "tags": [
+            "Javascript",
+            "HTML5",
+            "CSS",
+            "Open source"
+        ],
+        "images": ["voiceboardss1.png", "dumbboardss1.png"]
+    },
+    {
+        "id": 980,
+        "title": "PicName",
+        "description": "A simple tool for streamlining the process or renaming multiple pictures. Automatically retrieves metadata and inserts it into a standardized, easy to organize naming format.",
+        "links": [
+            {"url":"https://github.com/pino/pic-name", "title":"GitHub Repo"}
+        ],
+        "tags": [
+            "Java",
+            "Swing",
+            "Open source"
+        ],
+        "images": ["picnamess1.jpg"]
     }
 ]

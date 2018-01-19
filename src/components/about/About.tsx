@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { ProjectLink } from '../../components';
 import './About.css';
 
 const githubLogo = require ('../../resource/github.svg');
@@ -12,6 +13,11 @@ const About: React.SFC = () => (
             <a href="https://github.com/pino" target="_blank"><img src={githubLogo} /></a>
             <a href="https://www.linkedin.com/in/levirocha" target="_blank"><img src={linkedinLogo}/></a>
         </div>
+        <ProjectLink 
+            id={0} 
+            title="Resume" 
+            url="https://drive.google.com/file/d/1DGvTBxD1ktvEdznTqFdK3xzIZEvmrfRr/view?usp=sharing"
+        />
     </div>
 );
 

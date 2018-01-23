@@ -1,5 +1,5 @@
 .about-card {
-	border-radius: 8px;
+    border-radius: 8px;
     width: 188px;
     padding: 4px 16px;
     overflow: hidden;
@@ -15,6 +15,7 @@
     margin: 0;
     background-color: black;
     line-height: 24px;
+    padding: 6px 12px;
     height: 24px;
 }
 
@@ -25,12 +26,13 @@
 
 .about-card .project-link a {
     color: white;
+    font-size: 20px;
 }
 
 .links img {
     height: 34px;
     width: 34px;
-    margin: 0 0 8px 0;
+    margin: 0 0 8px 4px;
     border-radius: 50%;
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }

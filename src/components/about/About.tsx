@@ -15,7 +15,7 @@ const About: React.SFC = () => (
         </div>
         <ProjectLink 
             id={0} 
-            title="Resume" 
+            title="CV" 
             url="https://drive.google.com/file/d/1DGvTBxD1ktvEdznTqFdK3xzIZEvmrfRr/view?usp=sharing"
         />
     </div>

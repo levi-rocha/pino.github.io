@@ -2,11 +2,12 @@
     {
         "id": 900,
         "title": "Core Financeiro",
-        "description": "A financial management webservice for small to medium companies. With no installation required, provides entrepreneurs  and accountants with many important features for financial management and sales.",
+        "description": "A financial management web service for small to medium companies. With no installation required, provides entrepreneurs  and accountants with many important features for managing finances, sales and taxes.",
         "links": [
-            {"url":"http://www.corefinanceiro.com.br/", "title":"Landpage"}
+            {"url":"http://www.corefinanceiro.com.br/", "title":"Land page"}
         ],
         "tags": [
+            ".NET",
             ".NET MVC",
             "C#",
             "SQL Server",
@@ -19,6 +20,25 @@
             "Cloud hosted"
         ],
         "images": ["corefinanceiro.png", "corefinanceiro2.png"]
+    },
+    {
+        "id": 909,
+        "title": "Zombie Resources",
+        "description": "[ Tech Interview ] A web service for managing resources in the zombie apocalypse. Manage resources, people and their interactions.",
+        "links": [
+            {"url":"https://bitbucket.org/levirocha/zombie-resources", "title":"BitBucket Repository"}
+        ],
+        "tags": [
+            ".NET",
+            ".NET Core",
+            "C#",
+            "SQL Server",
+            "Service APIs",
+            "HTML5",
+            "CSS",
+            "Open Source"
+        ],
+        "images": ["apocalipse-zumbi.jpg"]
     },
     {
         "id": 910,
@@ -40,7 +60,7 @@
         "title": "This Portfolio",
         "description": "My portfolio website, showcasing some of the projects I've worked on.",
         "links": [
-            {"url":"https://github.com/pino/pino.github.io", "title":"GitHub Repo"}
+            {"url":"https://github.com/pino/pino.github.io", "title":"GitHub Repository"}
         ],
         "tags": [
             "HTML5",
@@ -56,9 +76,9 @@
     {
         "id": 927,
         "title": "Eu Resolvo Web App",
-        "description": "Web version of the Eu Resolvo application - A social media webservice for sharing problems and solutions.",
+        "description": "Web version of the Eu Resolvo application - A social media web service for sharing problems and solutions.",
         "links": [
-            {"url":"https://github.com/pino/resolve-web", "title":"GitHub Repo"}
+            {"url":"https://github.com/pino/resolve-web", "title":"GitHub Repository"}
         ],
         "tags": [
             "Service APIs",
@@ -77,9 +97,9 @@
     {
         "id": 928,
         "title": "Eu Resolvo REST API",
-        "description": "REST API for the Eu Resolvo application - A social media webservice for sharing problems and solutions.",
+        "description": "REST API for the Eu Resolvo application - A social media web service for sharing problems and solutions.",
         "links": [
-            {"url":"https://github.com/pino/resolve-rest", "title":"GitHub Repo"}
+            {"url":"https://github.com/pino/resolve-rest", "title":"GitHub Repository"}
         ],
         "tags": [
             "Java",
@@ -94,9 +114,9 @@
     {
         "id": 929,
         "title": "Eu Resolvo Android App",
-        "description": "Adroid version of the Eu Resolvo application - A social media webservice for sharing problems and solutions.",
+        "description": "Android version of the Eu Resolvo application - A social media web service for sharing problems and solutions.",
         "links": [
-            {"url":"https://github.com/pino/resolve-mobile", "title":"GitHub Repo"}
+            {"url":"https://github.com/pino/resolve-mobile", "title":"GitHub Repository"}
         ],
         "tags": [
             "Java",
@@ -140,10 +160,10 @@
     {
         "id": 950,
         "title": "Annotate",
-        "description": "[ Nov 2017 Vanhackathon Submission ] A webservice for creating and sharing annotations and hightlights on articles.",
+        "description": "[ Nov 2017 Vanhackathon Submission ] A web service for creating and sharing annotations and highlights on articles.",
         "links": [
             {"url":"https://annotate-app.herokuapp.com/", "title":"Access it on Heroku"},
-            {"url":"https://github.com/pino/annotate", "title":"GitHub Repo"}
+            {"url":"https://github.com/pino/annotate", "title":"GitHub Repository"}
         ],
         "tags": [
             "HTML5",
@@ -160,9 +180,9 @@
     {
         "id": 960,
         "title": "Buzzer",
-        "description": "A buzzer system for quiz-like games. Provides host with a host screen, and each player/team can join as a individual buzzer through the buzzer page (generally using their smatphones).",
+        "description": "A buzzer system for quiz-like games. Provides host with a host screen, and each player/team can join as a individual buzzer through the buzzer page (generally using their smartphones).",
         "links": [
-            {"url":"https://github.com/pino/buzzer", "title":"GitHub Repo"}
+            {"url":"https://github.com/pino/buzzer", "title":"GitHub Repository"}
         ],
         "tags": [
             "Javascript",
@@ -179,8 +199,8 @@
         "title": "Chessboards",
         "description": "A responsive Chessboard with game logic integration and Speech recognition; And a dumb chessboard with no game logic (for studying purposes).",
         "links": [
-            {"url":"https://github.com/pino/voice-chessboard", "title":"Voice Chessboard GitHub Repo"},
-            {"url":"https://github.com/pino/dumb-chessboard", "title":"'Dumb' Chessboard GitHub Repo"}
+            {"url":"https://github.com/pino/voice-chessboard", "title":"Voice Chessboard GitHub Repository"},
+            {"url":"https://github.com/pino/dumb-chessboard", "title":"'Dumb' Chessboard GitHub Repository"}
         ],
         "tags": [
             "Javascript",
@@ -195,7 +215,7 @@
         "title": "PicName",
         "description": "A simple tool for streamlining the process or renaming multiple pictures. Automatically retrieves metadata and inserts it into a standardized, easy to organize naming format.",
         "links": [
-            {"url":"https://github.com/pino/pic-name", "title":"GitHub Repo"}
+            {"url":"https://github.com/pino/pic-name", "title":"GitHub Repository"}
         ],
         "tags": [
             "Java",

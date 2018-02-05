@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.8ad098a2.css",
-  "main.css.map": "static/css/main.8ad098a2.css.map",
-  "main.js": "static/js/main.117e80ad.js",
-  "main.js.map": "static/js/main.117e80ad.js.map",
+  "main.css": "static/css/main.840c7743.css",
+  "main.css.map": "static/css/main.840c7743.css.map",
+  "main.js": "static/js/main.07330cc9.js",
+  "main.js.map": "static/js/main.07330cc9.js.map",
   "static/media/8buzzerss.jpg": "static/media/8buzzerss.5a4dd1d7.jpg",
   "static/media/annotate.png": "static/media/annotate.5bb8d8f4.png",
   "static/media/annotate2.png": "static/media/annotate2.77142c49.png",
@@ -32,5 +32,7 @@
   "static/media/sentina2.png": "static/media/sentina2.f73c1ed4.png",
   "static/media/voiceboardss1.png": "static/media/voiceboardss1.27e6987b.png",
   "static/media/watchthis.webp": "static/media/watchthis.62260890.webp",
-  "static/media/watchthis2.webp": "static/media/watchthis2.e98f060e.webp"
+  "static/media/watchthis2.webp": "static/media/watchthis2.e98f060e.webp",
+  "static/media/zeus1.png": "static/media/zeus1.5b2ec8c8.png",
+  "static/media/zeus2.png": "static/media/zeus2.e71dde11.png"
 }

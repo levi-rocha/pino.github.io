@@ -9,7 +9,7 @@ const mapStateToProps = (state: StoreState) => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch<Action>) => ({
-        onToggleTag: (id: number, checked: boolean) => dispatch(tagActions.toggleTag(id, checked)),
+        onToggleTag: (id: number) => dispatch(tagActions.toggleTag(id)),
         onToggleSelectAll: () => dispatch(tagActions.toggleSelectAllTags()),
 });
 

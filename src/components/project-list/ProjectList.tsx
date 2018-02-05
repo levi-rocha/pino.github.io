@@ -5,6 +5,7 @@ import './ProjectList.css';
 
 export interface ProjectListProps {
     projects: Project[];
+    onToggleTag: () => void;
     projectClick: () => void;
 }
 
@@ -16,6 +17,7 @@ const ProjectList: React.SFC<ProjectListProps> = (props) => (
                 key={project.id}
                 project={project}
                 projectClick={props.projectClick}
+                onToggleTag={props.onToggleTag}
             />
         )}
     </div>

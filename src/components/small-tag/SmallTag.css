@@ -7,9 +7,21 @@
     display: inline-block;
     white-space: pre-line;
     transition: all 0.35s cubic-bezier(.25,.8,.25,1);
+    cursor: pointer;
 }
 
 .small-tag.selected {
     background-color: green;
     color: white;
+}
+
+.small-tag:hover {
+    opacity: 0.5;
+    background-color: #009933;
+    color: white;
+}
+
+.small-tag.selected:hover {
+    background-color: #eee;;
+    color: black;
 }

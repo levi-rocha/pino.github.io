@@ -5,6 +5,7 @@ import './MainPanel.css';
 
 export interface MainPanelProps {
     projects: Project[];
+    onToggleTag: () => any;
     projectClick: () => any;
 }
 
@@ -14,6 +15,7 @@ const MainPanel: React.SFC<MainPanelProps> = (props) => {
             <ProjectList
                 projects={props.projects}
                 projectClick={props.projectClick}
+                onToggleTag={props.onToggleTag}
             />
         </div>
     );

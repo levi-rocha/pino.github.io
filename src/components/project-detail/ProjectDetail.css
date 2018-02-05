@@ -17,6 +17,18 @@
 .project-detail .small-tag {
     font-size: 10px;
     border-radius: 10px;
+    cursor: default;
+}
+
+.project-detail .small-tag:hover {
+    opacity: 1;
+    background-color: #ccc;
+    color: black;
+}
+
+.project-detail .small-tag.selected:hover {
+    background-color: green;
+    color: white;
 }
 
 .ReactModalPortal + .ReactModalPortal .ReactModal__Content {

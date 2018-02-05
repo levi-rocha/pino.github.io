@@ -1,6 +1,7 @@
 .small-tag-list {
-    position: absolute;
     right: 8px;
-    bottom: 8px;
+    bottom: 4px;
     text-align: right;
+    margin: 0;
+    width: 290px;
 }

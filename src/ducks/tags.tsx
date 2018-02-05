@@ -11,7 +11,6 @@ type TOGGLE_SELECT_ALL_TAGS = typeof TOGGLE_SELECT_ALL_TAGS;
 interface ToggleTag {
     type: TOGGLE_TAG;
     id: number;
-    checked: boolean;
 }
 interface ToggleSelectAllTags {
     type: TOGGLE_SELECT_ALL_TAGS;
@@ -28,11 +27,10 @@ export interface TagsState {
 
 /* action creators */
 
-export function toggleTag(id: number, checked: boolean): ToggleTag {
+export function toggleTag(id: number): ToggleTag {
     return {
         type: TOGGLE_TAG,
-        id: id,
-        checked: checked
+        id: id
     };
 }
 
@@ -54,17 +52,17 @@ const initialState: TagsState = {
 export default function reducer(state: TagsState = initialState, action: Action): TagsState {
     switch (action.type) {
         case TOGGLE_TAG: {
-            const updatedTags = getUpdatedTagsAfterSingleToggle(state.tags, action.id, action.checked);
+            const updatedTags = getUpdatedTagsAfterSingleToggle(state.tags, action.id);
             const updatedProjects = getUpdatedProjects(state.projects, updatedTags);
-            const updatedFilteredProjects = noTagsSelected(updatedTags) 
-            ? updatedProjects
-            : getFilteredProjects(updatedProjects);
-            const updatedAllTagsSelected = allTagsSelected(updatedTags) 
-            ? true 
-            : noTagsSelected(updatedTags) 
-            ? false
-            : state.allTagsSelected;
-            return { 
+            const updatedFilteredProjects = noTagsSelected(updatedTags)
+                ? updatedProjects
+                : getFilteredProjects(updatedProjects);
+            const updatedAllTagsSelected = allTagsSelected(updatedTags)
+                ? true
+                : noTagsSelected(updatedTags)
+                    ? false
+                    : state.allTagsSelected;
+            return {
                 projects: updatedProjects,
                 filteredProjects: updatedFilteredProjects,
                 tags: updatedTags,
@@ -73,21 +71,23 @@ export default function reducer(state: TagsState = initialState, action: Action)
         }
         case TOGGLE_SELECT_ALL_TAGS: {
             const allTagsAreSelected = !state.allTagsSelected;
-            const updatedTags = state.tags.map(tag => { 
+            const updatedTags = state.tags.map(tag => {
                 return {
                     ...tag, isSelected: allTagsAreSelected
                 };
             });
             const updatedProjects = state.projects.map(project => {
-                return {...project, tags: project.tags.map(tag => {
-                    return {
-                        ...tag, isSelected: allTagsAreSelected
-                    };
-                })};
+                return {
+                    ...project, tags: project.tags.map(tag => {
+                        return {
+                            ...tag, isSelected: allTagsAreSelected
+                        };
+                    })
+                };
             });
             const updatedFilteredProjects = allTagsAreSelected
-            ? getFilteredProjects(updatedProjects)
-            : updatedProjects;
+                ? getFilteredProjects(updatedProjects)
+                : updatedProjects;
             return {
                 projects: updatedProjects,
                 filteredProjects: updatedFilteredProjects,
@@ -96,48 +96,48 @@ export default function reducer(state: TagsState = initialState, action: Action)
             };
         }
         default:
-        return state;
+            return state;
     }
 }
 
 /* helper functions */
 
-function getUpdatedTagsAfterSingleToggle(tags: Tag[], toggledTagId: number, checked: boolean): Tag[] {
+function getUpdatedTagsAfterSingleToggle(tags: Tag[], toggledTagId: number): Tag[] {
     return tags.map(tag => tag.id === toggledTagId
-        ? {...tag, isSelected: checked }
-        : tag );
+        ? { ...tag, isSelected: !tag.isSelected }
+        : tag);
 }
-    
+
 function allTagsSelected(tags: Tag[]): boolean {
-        return getSelectedTagCount(tags) === tags.length;
-    }
-    
+    return getSelectedTagCount(tags) === tags.length;
+}
+
 function noTagsSelected(tags: Tag[]): boolean {
-        return getSelectedTagCount(tags) === 0;
-    }
-    
+    return getSelectedTagCount(tags) === 0;
+}
+
 function getSelectedTagCount(tags: Tag[]): number {
-        return tags.filter(tag => tag.isSelected).length;
-    }
-    
+    return tags.filter(tag => tag.isSelected).length;
+}
+
 function getFilteredProjects(projects: Project[]): Project[] {
-        return projects.filter(project => project.tags.filter(tag => tag.isSelected).length > 0);
-    }
-    
+    return projects.filter(project => project.tags.filter(tag => tag.isSelected).length > 0);
+}
+
 function getUpdatedProjects(projects: Project[], tags: Tag[]): Project[] {
-        let selectedTags: number[] = [];
-        for (let tag of tags) {
-            if (tag.isSelected) {
-                selectedTags.push(tag.id);
-            }
+    let selectedTags: number[] = [];
+    for (let tag of tags) {
+        if (tag.isSelected) {
+            selectedTags.push(tag.id);
         }
-        return projects.map(project => updateProjectTags(project, selectedTags));
     }
-    
+    return projects.map(project => updateProjectTags(project, selectedTags));
+}
+
 function updateProjectTags(project: Project, selectedTagIds: number[]): Project {
-        let updatedProjectTags = project.tags.map(tag => 
-            selectedTagIds.indexOf(tag.id) < 0 
-            ? {...tag, isSelected: false} 
-            : {...tag, isSelected: true});
-        return {...project, tags: updatedProjectTags};
-        }
+    let updatedProjectTags = project.tags.map(tag =>
+        selectedTagIds.indexOf(tag.id) < 0
+            ? { ...tag, isSelected: false }
+            : { ...tag, isSelected: true });
+    return { ...project, tags: updatedProjectTags };
+}

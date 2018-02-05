@@ -1,13 +1,23 @@
+.card-container {
+    max-width: 290px;
+    padding: 0;
+    height: 236px;
+    padding: 18px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
 .project-card {
-    position: relative;
+    display: block;
 	border-radius: 8px;
     width: 290px;
-    height: 290px;
-    margin: 18px;
+    height: 180px;
     overflow: hidden;
     background-color: #fff;
     box-shadow: 0 0 6px rgba(0,0,0,0.12), 0 0 6px rgba(0,0,0,0.24);
     transition: all 0.35s cubic-bezier(.25,.8,.25,1);
+    line-height: 24px;
+    display: inline-block;
 }
 
 .project-card:hover {
@@ -17,7 +27,7 @@
 
 .project-card .image-port {
     width: 290px;
-    height: 190px;
+    height: 136px;
     overflow: hidden;
     position: relative;
 }
@@ -26,8 +36,8 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    height: 100%;
-    width: auto;
+    width: 100%;
+    height: auto;
     transform: translate(-50%,-50%);
 }
 

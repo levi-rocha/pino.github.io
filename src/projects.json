@@ -1,10 +1,26 @@
 [
     {
+        "id": 895,
+        "title": "DFe.NET",
+        "description": "A free, open source library generating and managing legal fiscal documents.",
+        "links": [
+            {"url":"https://github.com/ZeusAutomacao/DFe.NET", "title": "GitHub Repository"}
+        ],
+        "tags": [
+            ".NET",
+            "WPF",
+            "C#",
+            "Open Source",
+            "Service APIs"
+        ],
+        "images": ["zeus1.png", "zeus2.png"]
+    },
+    {
         "id": 900,
         "title": "Core Financeiro",
         "description": "A financial management web service for small to medium companies. With no installation required, provides entrepreneurs  and accountants with many important features for managing finances, sales and taxes.",
         "links": [
-            {"url":"http://www.corefinanceiro.com.br/", "title":"Land page"}
+            {"url":"http://www.corefinanceiro.com.br/", "title":"Landpage"}
         ],
         "tags": [
             ".NET",

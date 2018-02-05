@@ -1,4 +1,4 @@
-import { StoreState, Action} from '../../types';
+import { StoreState, Action } from '../../types';
 import { connect, Dispatch } from 'react-redux';
 import * as modalActions from '../../ducks/modal';
 import { ProjectDetailModal } from '../../components';

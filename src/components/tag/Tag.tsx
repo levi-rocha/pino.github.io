@@ -4,7 +4,7 @@ import './Tag.css';
 
 export interface TagProps {
     tag: Tag;
-    onToggle: (id: number, checked: boolean) => void;
+    onToggle: (id: number) => void;
 }
 
 const Tag: React.SFC<TagProps> = (props) => (
@@ -14,7 +14,7 @@ const Tag: React.SFC<TagProps> = (props) => (
                 name={props.tag.name}
                 type="checkbox"
                 checked={props.tag.isSelected}
-                onChange={(event) => props.onToggle(props.tag.id, event.target.checked)}
+                onChange={(event) => props.onToggle(props.tag.id)}
             />
             <span className="slider"/>
             <div className="tag-name"> {props.tag.name} </div>

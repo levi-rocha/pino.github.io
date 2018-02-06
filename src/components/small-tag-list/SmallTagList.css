@@ -5,3 +5,9 @@
     margin: 0;
     width: 290px;
 }
+
+@media screen and (max-width: 550px) {
+    .small-tag-list {
+        width: 98%;
+    }
+}

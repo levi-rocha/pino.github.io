@@ -25,3 +25,16 @@
     background-color: #eee;;
     color: black;
 }
+
+@media screen and (max-width: 550px) {
+    .small-tag:hover {
+        opacity: 1;
+        background-color: green;
+        color: white;
+    }
+    
+    .small-tag.selected:hover {
+        background-color: green;
+        color: white;
+    }
+}

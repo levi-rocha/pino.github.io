@@ -46,15 +46,21 @@
 }
 
 @media screen and (max-width: 900px) {
-    .project-card {
+    .card-container {
         margin: 8px;
     }
 }
 
 @media screen and (max-width: 550px) {
+    .card-container {
+        margin: 18px 0;
+        max-width: 100%;
+        min-width: 100%;
+        height: auto;
+        padding: 0;
+    }
     .project-card {
-        margin: 8px auto;
-        width: 100%;
+        width: 98%;
         box-shadow: 0 0 12px rgba(0,0,0,0.24), 0 0 12px rgba(0,0,0,0.32);
     }
     .project-card .image-port {

@@ -2,27 +2,26 @@
     max-width: 290px;
     padding: 0;
     height: 236px;
-    padding: 18px;
-    margin-bottom: 8px;
+    padding: 10px 16px;
     overflow: hidden;
 }
 
 .project-card {
     display: block;
-	border-radius: 8px;
+    border-radius: 8px;
     width: 290px;
     height: 180px;
     overflow: hidden;
     background-color: #fff;
-    box-shadow: 0 0 6px rgba(0,0,0,0.12), 0 0 6px rgba(0,0,0,0.24);
-    transition: all 0.35s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.24);
+    transition: all 0.35s cubic-bezier(.25, .8, .25, 1);
     line-height: 24px;
     display: inline-block;
 }
 
 .project-card:hover {
     cursor: pointer;
-    box-shadow: 0 0 18px rgba(0,99,0,0.36), 0 0 24px rgba(0,99,0,0.48);
+    box-shadow: 0 0 18px rgba(39, 0, 99, 0.36), 0 0 24px rgba(39, 0, 99, 0.48);
 }
 
 .project-card .image-port {
@@ -38,7 +37,7 @@
     top: 50%;
     width: 100%;
     height: auto;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
 .project-card p {
@@ -61,7 +60,7 @@
     }
     .project-card {
         width: 98%;
-        box-shadow: 0 0 12px rgba(0,0,0,0.24), 0 0 12px rgba(0,0,0,0.32);
+        box-shadow: 0 0 12px rgba(39, 0, 99, 0.24), 0 0 12px rgba(0, 0, 0, 0.32);
     }
     .project-card .image-port {
         width: 100%;

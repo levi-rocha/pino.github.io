@@ -11,7 +11,7 @@ export interface ProjectListProps {
 
 const ProjectList: React.SFC<ProjectListProps> = (props) => (
     <div className="project-list">
-        <h1>Projects</h1>
+        <h2>Projects</h2>
         {props.projects.map(project =>
             <ProjectCard
                 key={project.id}

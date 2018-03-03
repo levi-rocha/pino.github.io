@@ -4,7 +4,7 @@
     padding: 4px 16px;
     overflow: hidden;
     background-color: #fff;
-    box-shadow: 0 0 6px rgba(0,0,0,0.12), 0 0 6px rgba(0,0,0,0.24);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.24);
 }
 
 .links {
@@ -21,7 +21,7 @@
 
 .about-card .project-link:hover {
     opacity: 0.4;
-    box-shadow: 0 0 6px rgba(0,0,0,0.24), 0 0 6px rgba(0,0,0,0.32);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.24), 0 0 6px rgba(0, 0, 0, 0.32);
 }
 
 .about-card .project-link a {
@@ -34,7 +34,7 @@
     width: 34px;
     margin: 0 0 8px 4px;
     border-radius: 50%;
-    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
 .links a:first-child {
@@ -43,7 +43,7 @@
 
 .links img:hover {
     opacity: 0.4;
-    box-shadow: 0 0 6px rgba(0,0,0,0.24), 0 0 6px rgba(0,0,0,0.32);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.24), 0 0 6px rgba(0, 0, 0, 0.32);
 }
 
 @media screen and (max-width: 550px) {

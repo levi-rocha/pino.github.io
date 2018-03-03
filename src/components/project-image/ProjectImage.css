@@ -6,13 +6,13 @@
     border-radius: 8px;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 0 6px rgba(0,0,0,0.12), 0 0 6px rgba(0,0,0,0.24);
-    transition: all 0.35s cubic-bezier(.25,.8,.25,1);
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.24);
+    transition: all 0.35s cubic-bezier(.25, .8, .25, 1);
     cursor: pointer;
 }
 
 .project-image:hover {
-    box-shadow: 0 0 18px rgba(0,99,0,0.36), 0 0 24px rgba(0,99,0,0.48);
+    box-shadow: 0 0 18px rgba(39, 0, 99, 0.36), 0 0 24px rgba(39, 0, 99, 0.36);
 }
 
 .project-image img {
@@ -21,7 +21,7 @@
     top: 50%;
     height: 100%;
     width: auto;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width: 600px) {

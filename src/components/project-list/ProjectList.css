@@ -2,8 +2,9 @@
     display: inline-block;
 }
 
-.project-list h1 {
+.project-list h2 {
     margin-left: 24px;
+    padding-top: 16px;
 }
 
 @media screen and (max-width: 550px) {

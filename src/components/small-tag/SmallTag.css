@@ -1,40 +1,41 @@
 .small-tag {
-    margin: 2px;
+    margin: 1px;
     font-size: 9px;
     background-color: #ccc;
-    border-radius: 9px;
-    padding: 3px 6px;
+    border-radius: 2px;
+    padding: 2px 5px;
     display: inline-block;
     white-space: pre-line;
-    transition: all 0.35s cubic-bezier(.25,.8,.25,1);
+    transition: all 0.35s cubic-bezier(.25, .8, .25, 1);
     cursor: pointer;
+    opacity: 0.9;
 }
 
 .small-tag.selected {
-    background-color: green;
+    background-color: #390099;
     color: white;
 }
 
 .small-tag:hover {
     opacity: 0.5;
-    background-color: #009933;
+    background-color: #390099;
     color: white;
 }
 
 .small-tag.selected:hover {
-    background-color: #eee;;
+    background-color: #eee;
+    ;
     color: black;
 }
 
 @media screen and (max-width: 550px) {
     .small-tag:hover {
         opacity: 1;
-        background-color: green;
+        background-color: #390099;
         color: white;
     }
-    
     .small-tag.selected:hover {
-        background-color: green;
+        background-color: #390099;
         color: white;
     }
 }

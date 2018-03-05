@@ -1,7 +1,8 @@
 .small-tag {
     margin: 1px;
     font-size: 9px;
-    background-color: #ccc;
+    background-color: #fff;
+    border: solid 0.5px #390099;
     border-radius: 2px;
     padding: 2px 5px;
     display: inline-block;

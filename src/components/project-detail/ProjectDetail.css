@@ -12,6 +12,7 @@
     position: relative;
     text-align: left;
     margin: 24px 4px 4px 6px;
+    width: 100%;
 }
 
 .project-detail .small-tag {
@@ -22,7 +23,7 @@
 
 .project-detail .small-tag:hover {
     opacity: 1;
-    background-color: #ccc;
+    background-color: #fff;
     color: black;
 }
 

@@ -1,12 +1,13 @@
 .project-link {
     display: inline-block;
-    margin: 8px 16px 8px 0;
+    margin: 12px 16px 8px 0;
     font-size: 16px;
     padding: 6px 18px;
     border: none;
-    border-radius: 18px;
+    border-radius: 6px;
+    border: solid 0.5px #390099;
     background-color: white;
-    box-shadow: 0 0 6px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 0 6px rgba(39, 0, 99, 0.12), 0 0 6px rgba(0, 0, 0, 0.24);
     transition: all 0.35s cubic-bezier(.25, .8, .25, 1);
 }
 
@@ -16,9 +17,9 @@
 }
 
 .project-link:hover {
-    opacity: 0.8;
+    opacity: 0.9;
     cursor: pointer;
-    box-shadow: 0 0 18px rgba(39, 0, 99, 0.36), 0 0 24px rgba(39, 0, 99, 0.48);
+    box-shadow: 0 0 18px rgba(39, 0, 99, 0.24), 0 0 24px rgba(39, 0, 99, 0.32);
 }
 
 @media screen and (max-width: 600px) {

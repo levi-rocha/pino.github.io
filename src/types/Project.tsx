@@ -1,11 +1,11 @@
-import Link from './Link';
-import Tag from './Tag';
+import Link from "./Link";
+import Tag from "./Tag";
 
 export default interface Project {
-    id: number;
-    title: string;
-    description: string;
-    links: Link[];
-    tags: Tag[];
-    images: string[];
-}
+	id: number;
+	title: string;
+	description: string;
+	links: Link[];
+	tags: Tag[];
+	images: string[];
+};

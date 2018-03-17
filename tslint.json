@@ -16,7 +16,7 @@
         "curly": true,
         "eofline": false,
         "forin": true,
-        "indent": [ true, "spaces" ],
+        "indent": [ true, "tabs" ],
         "interface-name": [true, "never-prefix"],
         "jsdoc-format": true,
         "jsx-no-lambda": false,
@@ -29,7 +29,7 @@
             "static-before-instance",
             "variables-before-functions"
         ],
-        "no-any": true,
+        "no-any": false,
         "no-arg": true,
         "no-bitwise": true,
         "no-console": [
@@ -61,7 +61,7 @@
             "check-open-brace",
             "check-whitespace"
         ],
-        "quotemark": [true, "single", "jsx-double"],
+        "quotemark": [true, "double", "jsx-double"],
         "radix": true,
         "semicolon": [true, "always"],
         "switch-default": true,

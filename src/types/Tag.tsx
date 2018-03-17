@@ -1,5 +1,5 @@
 export default interface Tag {
-    id: number;
-    name: string;
-    isSelected: boolean;
-}
+	id: number;
+	name: string;
+	isSelected: boolean;
+};

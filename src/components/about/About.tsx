@@ -4,17 +4,21 @@ import "./About.css";
 
 const githubLogo = require("../../resource/github.svg");
 const linkedinLogo = require("../../resource/linkedin.svg");
+const codewarsLogo = require("../../resource/codewars.svg");
 
 const About: React.SFC = () => (
 	<div className="about-card">
 		<h2>Levi Rocha</h2>
 		<p>Developing software for a better world.</p>
 		<div className="links">
+			<a href="https://www.linkedin.com/in/levirocha" target="_blank">
+				<img src={linkedinLogo} />
+			</a>
 			<a href="https://github.com/pino" target="_blank">
 				<img src={githubLogo} />
 			</a>
-			<a href="https://www.linkedin.com/in/levirocha" target="_blank">
-				<img src={linkedinLogo} />
+			<a href="https://www.codewars.com/users/pino" target="_blank">
+				<img src={codewarsLogo} />
 			</a>
 		</div>
 		<ProjectLink

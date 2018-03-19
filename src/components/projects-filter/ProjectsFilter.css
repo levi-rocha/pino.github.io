@@ -1,7 +1,7 @@
 .filter-card {
     border-radius: 8px;
-    width: 204px;
-    padding: 4px 8px;
+    width: 188px;
+    padding: 4px 12px;
     overflow: hidden;
     background-color: #fff;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.24);

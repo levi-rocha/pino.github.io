@@ -1,3 +1,15 @@
+# My Portfolio
+
+[![Made With React](https://img.shields.io/badge/%E2%9A%9B%EF%B8%8F-React-blue.svg)](https://github.com/facebook/react)
+[![styled with prettier](https://img.shields.io/badge/%F0%9F%8E%80-Prettier-FF69B4.svg)](https://github.com/prettier/prettier)
+[![Ducks](https://img.shields.io/badge/%F0%9F%A6%86-Ducks-green.svg)](https://github.com/erikras/ducks-modular-redux)
+![Made With Love](https://img.shields.io/badge/%F0%9F%92%96-Made%20With%20%E2%99%A5-ee28a4.svg)
+![Blazing Fast](https://img.shields.io/badge/🔥-Blazing%20Fast-red.svg)
+![Production Ready](https://img.shields.io/badge/%F0%9F%91%8C-Production%20Ready-00ddcc.svg)
+![Totally Secure](https://img.shields.io/badge/%F0%9F%94%90-Totally%20Secure-yellow.svg)
+![Y2K Compliant](https://img.shields.io/badge/%F0%9F%97%93-Y2K%20Compliant-bd6867.svg)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
